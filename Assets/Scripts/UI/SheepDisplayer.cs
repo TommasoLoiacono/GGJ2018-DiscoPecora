@@ -8,6 +8,8 @@ public class SheepDisplayer : MonoBehaviour {
     public Image SheepPhoto;
     Image BackGround;
     public Text SheepText;
+    public Text NameText;
+
 
     Sprite _imageOn;
     Sprite _imageOff;
@@ -33,17 +35,7 @@ public class SheepDisplayer : MonoBehaviour {
     /// <param name="_struct"></param>
     public void SetupCard(Pecora _sheep)
     {
-        SetImage(_sheep);
         SetText(_sheep);
-    }
-
-    /// <summary>
-    /// Set the image of the card
-    /// </summary>
-    /// <param name="_struct">Structure with all the datas</param>
-    public void SetImage(Pecora _sheep)
-    {
-        //SheepPhoto.sprite = _struct._image;
     }
 
     /// <summary>
@@ -68,8 +60,8 @@ public class SheepDisplayer : MonoBehaviour {
                 sexString = "noSex";
                 break;
         }
-        //SheepText.text = _struct._name + "\n Sex: " + _struct._sex + " Age: " + _struct._age + "\n Wool: " + _struct._lana + "\n character: " + _struct._character;
-        SheepText.text = "Sex: " + sexString + "Lana: " + _sheep.colorePelle.valoreCaratteristica +"Pelle: " + _sheep.colorePelle.valoreCaratteristica + "Carattere: " + _sheep.carattere.valoreCaratteristica;
+        NameText.text = _sheep.nome;
+        SheepText.text = "Sex: " + sexString + " - Lana: " + _sheep.colorePelle.valoreCaratteristica +" - Pelle: " + _sheep.colorePelle.valoreCaratteristica + " - Carattere: " + _sheep.carattere.valoreCaratteristica;
     }
 
     /// <summary>
