@@ -47,16 +47,24 @@ public class Sheep : MonoBehaviour {
             if (_underInertia && _time <= SmoothTime)
             {
                 transform.position += _velocity;
-                _velocity = Vector3.Lerp(_velocity, Vector3.down*0.5f, _time);
+                _velocity = Vector3.Lerp(_velocity, Vector3.down * 0.5f, _time);
                 if (transform.position.x >= 17.5)
-                    _velocity.x = - Mathf.Abs(_velocity.x);
+                {
+                    _velocity.x = -Mathf.Abs(_velocity.x);
+                }
                 if (transform.position.x <= -17.5)
+                {
                     _velocity.x = Mathf.Abs(_velocity.x);
+                }
                 if (transform.position.y >= 10)
+                {
                     _velocity.y = -0.3f;
+                }
                 if (transform.position.y <= -9)
+                {
+                    Debug.Log("ciao");
                     _velocity.y = 0;
-
+                }
                 _time += Time.smoothDeltaTime;
             }
             else
@@ -64,8 +72,6 @@ public class Sheep : MonoBehaviour {
                 _underInertia = false;
                 _time = 0.0f;
 
-                transform.position += _velocity;
-                _velocity = Vector3.Lerp(_velocity, Vector3.down * 0.5f, _time);
             }
         }
     }

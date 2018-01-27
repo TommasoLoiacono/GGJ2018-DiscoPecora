@@ -16,8 +16,6 @@ public class Pecora : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //print("pop");
-        print("ciao"+colorePelle.valoreCaratteristica);
 
 	}
 
