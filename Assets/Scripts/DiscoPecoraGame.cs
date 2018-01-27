@@ -13,6 +13,9 @@ public class DiscoPecoraGame : MonoBehaviour {
     public ArrayList aggettiviCarattere = new ArrayList(new string[] { "blu", "rosso", "giallo" });
     public float probabilitaGenerazioneDominante=0.5f;
     public Pecora pecoraSuprema = new Pecora();
+    public Pecora pecoraSx;
+    public Pecora pecoraDx;
+
 
 
     public float minNumberOfSheeps;
@@ -31,30 +34,7 @@ public class DiscoPecoraGame : MonoBehaviour {
 
     }
 
-    ///Copied in the next function for initializate the generation of the sheep in Gameplay State. 
-    //IEnumerator Populate()
-    //{
-    //    layerWidth = screenSizeX / 2;
-    //    layerHeight = screenSizeY / 2;
-
-    //    numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
-
-    //    for (int i = 0; i < numberOfSheeps; i++)
-    //    {
-    //        Vector3 spawnPos = new Vector3(randomDisplacement(layerWidth),
-    //            randomDisplacement(layerHeight),
-    //            0f);
-    //        CreaPecora(RandomizzaPecora(), spawnPos);
-    //        Debug.Log("Pecora");
-    //    }
-    //    yield return null;
-
-    //}
-
-    /// <summary>
-    /// Callad to instantiate the sheeps in the scene
-    /// </summary>
-    public void Populate()
+    IEnumerator Populate()
     {
         layerWidth = screenSizeX / 2;
         layerHeight = screenSizeY / 2;
@@ -63,9 +43,22 @@ public class DiscoPecoraGame : MonoBehaviour {
 
         for (int i = 0; i < numberOfSheeps; i++)
         {
-            Vector3 spawnPos = new Vector3(randomDisplacement(layerWidth),
-                randomDisplacement(layerHeight),
-                0f);
+            Vector3 spawnPos = new Vector3(Random.Range(-9,9),Random.Range(-2,4), 0f);
+            Debug.Log("Pecora");
+        }
+        yield return null;
+    }
+
+    public void Generate()
+    {
+        layerWidth = screenSizeX / 2;
+        layerHeight = screenSizeY / 2;
+
+        numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
+
+        for (int i = 0; i < numberOfSheeps; i++)
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(-9, 9), Random.Range(-2, 4), 0f);
             CreaPecora(RandomizzaPecora(), spawnPos);
             Debug.Log("Pecora");
         }
@@ -94,6 +87,7 @@ public class DiscoPecoraGame : MonoBehaviour {
         else
         {
             CreaPecora(AccoppiamentoTeorico(padre, madre), Vector3.zero);
+            
         }
     }
 
@@ -115,7 +109,7 @@ public class DiscoPecoraGame : MonoBehaviour {
         if (a.carattereDominante == 1 && b.carattereDominante == 0) { return a; }
         if (b.carattereDominante == 1 && a.carattereDominante == 0) { return b; }
 
-        if (Random.RandomRange(0, 2) == 0) { return a; }
+        if (Random.Range(0, 2) == 0) { return a; }
         else { return b; }
     }
 
