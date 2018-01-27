@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114167889897715008}
   - component: {fileID: 114477486442728098}
   - component: {fileID: 61633117280857292}
+  - component: {fileID: 95132114925227514}
   m_Layer: 9
   m_Name: Sheep
   m_TagString: Untagged
@@ -68,6 +69,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4140663, y: 1.4134588}
   m_EdgeRadius: 0
+--- !u!95 &95132114925227514
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250896972281420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c771675749b7b3b4bbcbc0ef50910ba1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114167889897715008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SmoothTime: 0
   inertiaDragAmount: 0.5
-  speed: 0.5
+  speed: 1
   timeBetweenMovments: 4
 --- !u!114 &114477486442728098
 MonoBehaviour:

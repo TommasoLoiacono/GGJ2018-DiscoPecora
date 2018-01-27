@@ -40,6 +40,7 @@ public class DiscoPecoraGame : MonoBehaviour {
         StartCoroutine(GeneraPecore());
         StartCoroutine(InvecchiaPecore());
         Generate();
+        giocoAttivo = true;
         //StartCoroutine(Populate());
 
     }
@@ -92,23 +93,6 @@ public class DiscoPecoraGame : MonoBehaviour {
         }
     }
 
-     //deprecato
-    void Populate()
-    {
-        layerWidth = screenSizeX / 2;
-        layerHeight = screenSizeY / 2;
-
-        numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
-
-        for (int i = 0; i < numberOfSheeps; i++)
-        {
-            Vector3 spawnPos = new Vector3(Random.Range(-9,9),Random.Range(-2,4), 0f);
-            Debug.Log("Pecora");
-        }
-        yield return null;
-    }
-
-    //deprecato
     /// <summary>
     /// Generate the sheep in the scene
     /// </summary>

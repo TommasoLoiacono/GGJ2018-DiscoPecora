@@ -118,8 +118,6 @@ public class GameManager : MonoBehaviour {
     {
         UIMng.GameplayActions();
         DiscoPecora.Init();
-        DiscoPecora.Generate();
-        DiscoPecora.giocoAttivo = true;
     }
 
     /// <summary>
