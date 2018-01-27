@@ -35,11 +35,12 @@ public class DiscoPecoraGame : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start() {
+    public void Init() {
         pecoraSuprema = RandomizzaPecora();
         StartCoroutine(GeneraPecore());
         StartCoroutine(InvecchiaPecore());
-        // StartCoroutine(Populate());
+        Generate();
+        //StartCoroutine(Populate());
 
     }
 
@@ -104,9 +105,13 @@ public class DiscoPecoraGame : MonoBehaviour {
             Vector3 spawnPos = new Vector3(Random.Range(-9,9),Random.Range(-2,4), 0f);
             Debug.Log("Pecora");
         }
+        yield return null;
     }
 
     //deprecato
+    /// <summary>
+    /// Generate the sheep in the scene
+    /// </summary>
     public void Generate()
     {
         layerWidth = screenSizeX / 2;
@@ -136,16 +141,20 @@ public class DiscoPecoraGame : MonoBehaviour {
        
     }
 
-    public void Accoppia(Pecora padre, Pecora madre)
+
+    public void Accoppia()
     {
-        if (padre.sesso == madre.sesso)
+        if (pecoraSx != null && pecoraDx != null)
         {
-            // GAYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-        }
-        else
-        {
-            CreaPecora(AccoppiamentoTeorico(padre, madre), Vector3.zero);
-            
+            if (pecoraSx.sesso == pecoraDx.sesso || pecoraSx.gameObject.GetInstanceID() == pecoraDx.gameObject.GetInstanceID())
+            {
+                // GAYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+                // Oppure è una sega
+            }
+            else
+            {
+                CreaPecora(AccoppiamentoTeorico(pecoraSx, pecoraDx), Vector3.zero);
+            } 
         }
     }
 

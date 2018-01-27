@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -31,6 +32,9 @@ public class GameManager : MonoBehaviour {
     {
         switch (_newState)
         {
+            case FlowState.Titles:
+                    TitlesActions();
+                break;
             case FlowState.MainMenu:
                 if(_oldState == FlowState.Gameover)
                     MenuActions();
@@ -52,36 +56,75 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
 
-    // Use this for initialization
     void Start () {
+        #region singleton
         if (I == null)
             I = this;
         else
             DestroyImmediate(gameObject);
+        #endregion
 
         DiscoPecora = GetComponent<DiscoPecoraGame>();
         Init();                                                 //TODO: Da spostare nella macchina a stati
         Cursor.lockState = CursorLockMode.Confined;
 	}
-	
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DiscoPecora.Accoppia();
+        }
+    }
+
+    /// <summary>
+    /// Create the UI and set the first State of the state machine to MainMenu state.
+    /// </summary>
     public void Init()
     {
         UIMng = Instantiate(UIManagerPrefab, transform).GetComponent<UIManager>();
         UIMng.Init();
-        CurrentState = FlowState.MainMenu;
+        CurrentState = FlowState.Titles;
     }
 
+    void TitlesActions()
+    {
+        UIMng.TitlePanel.DOFade(1, 2).OnComplete(() => 
+        {
+            UIMng.TitlePanel.DOFade(0, 2).OnComplete(() => 
+            {
+                UIMng.TitlePanelBackGround.DOFade(0, 1).OnComplete(() => 
+                {
+                    UIMng.TitlePanelBackGround.gameObject.SetActive(false);
+                    ChangeState(FlowState.MainMenu);
+                });
+            });
+        });
+
+    }
+
+    /// <summary>
+    /// The action when the current state is GamePlay
+    /// </summary>
     void MenuActions()
     {
         UIMng.MenuActions();
     }
 
+    /// <summary>
+    /// The action when the current state is Gameplay
+    /// </summary>
     void GameplayActions()
     {
         UIMng.GameplayActions();
+        DiscoPecora.Init();
         DiscoPecora.Generate();
+        DiscoPecora.giocoAttivo = true;
     }
 
+    /// <summary>
+    /// The action when the current state is Gameover
+    /// </summary>
     void GameOverActions()
     {
 
@@ -90,6 +133,7 @@ public class GameManager : MonoBehaviour {
 
 public enum FlowState
 {
+    Titles,
     MainMenu,
     Gameplay,
     Gameover

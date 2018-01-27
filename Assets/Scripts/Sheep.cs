@@ -128,15 +128,19 @@ public class Sheep : MonoBehaviour {
         if (Input.GetMouseButtonDown(1))
         {
             GameManager.I.UIMng.gameplayCtrl.ShowSheepDatas(GetComponent<Pecora>(), false);
+            GameManager.I.DiscoPecora.pecoraDx = GetComponent<Pecora>();
         }
     }
 
     void OnMouseDown()
     {
+        GameManager.I.DiscoPecora.pecoraSx = GetComponent<Pecora>();
         _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
         _underInertia = false;
         GameManager.I.UIMng.gameplayCtrl.ShowSheepDatas(GetComponent<Pecora>(), true);
+        GameManager.I.UIMng.ActivateSpotLight();
+
     }
 
     float timer = .2f;
@@ -145,11 +149,13 @@ public class Sheep : MonoBehaviour {
     {
         if (timer <= 0)
         {
+            GameManager.I.DiscoPecora.pecoraSx = null;
             Vector3 _prevPosition = _curPosition;
             _curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
             _curPosition = Camera.main.ScreenToWorldPoint(_curScreenPoint) + _offset;
             _velocity = _curPosition - _prevPosition;
             transform.position = _curPosition;
+            GameManager.I.UIMng.DeactivateSpotLight();
             dragging = true;
             _underInertia = true;
             return;

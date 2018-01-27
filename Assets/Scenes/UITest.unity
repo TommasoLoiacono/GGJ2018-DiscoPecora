@@ -159,6 +159,14 @@ MonoBehaviour:
   pecoreInGioco: []
   probabilitaGenerazioneDominante: 0.5
   pecoraSuprema: {fileID: 0}
+  pecoraSx: {fileID: 0}
+  pecoraDx: {fileID: 0}
+  punteggio: 0
+  giocoAttivo: 1
+  secondiPerGenerarePecora: 5
+  numeroMassimoPecore: 50
+  tempoPerInvecchiarePecore: 6
+  etaMorte: 4
   minNumberOfSheeps: 5
   maxNumberOfSheeps: 5
   yRandomDisplacement: 2

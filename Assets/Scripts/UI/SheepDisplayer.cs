@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class SheepDisplayer : MonoBehaviour {
 
     public Image SheepPhoto;
-    Image BackGround;
     public Text SheepText;
     public Text NameText;
 
@@ -24,7 +23,6 @@ public class SheepDisplayer : MonoBehaviour {
     #region API
     public void Init(Sprite _ImageOn, Sprite _ImageOff)
     {
-        BackGround = GetComponent<Image>();
         _imageOn = _ImageOn;
         _imageOff = _ImageOff;
     }
