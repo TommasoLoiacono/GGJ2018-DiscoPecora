@@ -33,13 +33,16 @@ public class GameManager : MonoBehaviour {
         switch (_newState)
         {
             case FlowState.MainMenu:
-                MenuActions();
+                if(_oldState == FlowState.Gameover)
+                    MenuActions();
                 break;
             case FlowState.Gameplay:
-                GameplayActions();
+                if (_oldState == FlowState.MainMenu)
+                    GameplayActions();
                 break;
             case FlowState.Gameover:
-                GameOverActions();
+                if (_oldState == FlowState.Gameplay)
+                    GameOverActions();
                 break;
         }
     }

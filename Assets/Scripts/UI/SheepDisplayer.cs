@@ -13,13 +13,10 @@ public class SheepDisplayer : MonoBehaviour {
     Sprite _imageOff;
 
     bool _isUsed;
-    public bool IsUsed {
+    public bool IsUsed
+    {
         get { return _isUsed; }
-        set
-        {
-            _isUsed = value;
-
-        }
+        set { _isUsed = value; }
     }
 
     #region API
