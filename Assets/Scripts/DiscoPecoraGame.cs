@@ -34,7 +34,7 @@ public class DiscoPecoraGame : MonoBehaviour {
 
     }
 
-    IEnumerator Populate()
+    public void Populate()
     {
         layerWidth = screenSizeX / 2;
         layerHeight = screenSizeY / 2;
@@ -44,22 +44,6 @@ public class DiscoPecoraGame : MonoBehaviour {
         for (int i = 0; i < numberOfSheeps; i++)
         {
             Vector3 spawnPos = new Vector3(Random.Range(-9,9),Random.Range(-2,4), 0f);
-            Debug.Log("Pecora");
-        }
-        yield return null;
-    }
-
-    public void Generate()
-    {
-        layerWidth = screenSizeX / 2;
-        layerHeight = screenSizeY / 2;
-
-        numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
-
-        for (int i = 0; i < numberOfSheeps; i++)
-        {
-            Vector3 spawnPos = new Vector3(Random.Range(-9, 9), Random.Range(-2, 4), 0f);
-            CreaPecora(RandomizzaPecora(), spawnPos);
             Debug.Log("Pecora");
         }
     }
