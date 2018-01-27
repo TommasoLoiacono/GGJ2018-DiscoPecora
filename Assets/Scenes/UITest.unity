@@ -159,6 +159,14 @@ MonoBehaviour:
   pecoreInGioco: []
   probabilitaGenerazioneDominante: 0.5
   pecoraSuprema: {fileID: 0}
+  pecoraSx: {fileID: 0}
+  pecoraDx: {fileID: 0}
+  punteggio: 0
+  giocoAttivo: 1
+  secondiPerGenerarePecora: 0.2
+  numeroMassimoPecore: 50
+  tempoPerInvecchiarePecore: 5
+  etaMorte: 3
   minNumberOfSheeps: 5
   maxNumberOfSheeps: 5
   yRandomDisplacement: 2
@@ -274,7 +282,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029325485, y: 0.029309273}
+  m_Offset: {x: -0.016612053, y: 0.029309273}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -285,7 +293,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 23.917023, y: 10.084761}
+  m_Size: {x: 17.82205, y: 10.084761}
   m_EdgeRadius: 0
 --- !u!1 &2071936314
 GameObject:
