@@ -9,6 +9,8 @@ public class Sheep : MonoBehaviour {
 
     [Range(0f, 1f)]
     public float inertiaDragAmount;
+    public float speed = 1;
+    public int timeBetweenMovments = 4;
 
     private bool _underInertia = false;
     private bool dragging = false;
@@ -26,6 +28,7 @@ public class Sheep : MonoBehaviour {
     {
         startPosition = transform.position;
         startTime = Time.time;
+        StartCoroutine("DanzingAround", Random.Range(1, 3));
     }
 
     void Update () {
@@ -83,8 +86,8 @@ public class Sheep : MonoBehaviour {
             {
                 _underInertia = false;
                 _time = 0.0f;
-                if(!CR_running)
-                    StartCoroutine("MoveAround",Random.Range(0,2));
+
+                    
 
             }
         }
@@ -92,34 +95,36 @@ public class Sheep : MonoBehaviour {
 
     IEnumerator DanzingAround()
     {
-        yield return null;
+        while (true)
+        {
+            int _seconds = Random.Range(0, 3);
+            if(!CR_running)
+            {
+                StartCoroutine("MoveAround", _seconds);
+            }
+            yield return new WaitForSeconds(_seconds+Random.Range(1,timeBetweenMovments));
+        }
+
+        
     }
 
-    IEnumerator MoveAround(int dir)
+    IEnumerator MoveAround(int _seconds)
     {
-       // Debug.Log(dir);
+        
         CR_running = true;
         float startT = Time.time;
-        int x, y = 0;
-        if(dir==0)
-        {
-            x = Random.Range(0, 9);
-            y = Random.Range(0, 4);
-            dir = -1;
 
-        }
-        else
-        {
-            x = Random.Range(-9, 0);
-            y = Random.Range(-2, 0);
-
-        }
-
-        float _time = Random.Range(2, 3);
-        while (Time.time-startT<_time && Camera.main.GetComponent<Collider2D>().bounds.Contains(transform.position)) {
-            transform.position += Vector3.Lerp(startPosition, new Vector3(x,y,0f).normalized, Mathf.PingPong(Time.deltaTime * _time, 1.0f));
+        int x = Random.Range(-9, 9);
+        int y = Random.Range(-2, 4);
+        Vector3 dest = new Vector3(x,y,0f);
+        float journeyLength = Vector3.Distance(startPosition, dest);
+        
+        while (Time.time-startT<_seconds) {
+            Debug.Log(dest);
+            transform.position= Vector3.Lerp(startPosition,dest, ((Time.time - startT) * speed)/journeyLength);
             yield return null;
         }
+        startPosition = transform.position;
         CR_running = false;
     }
 
@@ -167,6 +172,11 @@ public class Sheep : MonoBehaviour {
     {
         dragging = false;
         timer = .2f;
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
     
 }

@@ -69,7 +69,7 @@ public class DiscoPecoraGame : MonoBehaviour {
                         }
                         else
                         {
-                            Destroy(pecora);
+                            pecora.GetComponent<Animator>().SetBool("Dead",true);
                         }
                     }
                 }
@@ -83,7 +83,7 @@ public class DiscoPecoraGame : MonoBehaviour {
     {
         while (giocoAttivo) { 
         yield return new WaitForSeconds(secondiPerGenerarePecora);
-            print("Numero lista " + pecoreInGioco.Count);
+
             if (pecoreInGioco.Count <= numeroMassimoPecore)
             {
                 Vector3 spawnPos = new Vector3(Random.Range(-9, 9), Random.Range(-2, 4), 0f);
@@ -93,7 +93,7 @@ public class DiscoPecoraGame : MonoBehaviour {
     }
 
      //deprecato
-    IEnumerator Populate()
+    void Populate()
     {
         layerWidth = screenSizeX / 2;
         layerHeight = screenSizeY / 2;
