@@ -32,7 +32,7 @@ public class SheepManagement : MonoBehaviour
             Vector3 spawnPos = new Vector3(randomDisplacement(layerWidth),
                 randomDisplacement(layerHeight),
                 0f);
-            GameObject pecora=Instantiate(sheep, spawnPos, Quaternion.identity, transform);
+            GameObject pecora = Instantiate(sheep, spawnPos, Quaternion.identity, transform);
             listaPecore.Add(pecora);
         }
         yield return null;

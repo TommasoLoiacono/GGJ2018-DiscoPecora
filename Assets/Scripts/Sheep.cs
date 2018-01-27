@@ -63,6 +63,9 @@ public class Sheep : MonoBehaviour {
             {
                 _underInertia = false;
                 _time = 0.0f;
+
+                transform.position += _velocity;
+                _velocity = Vector3.Lerp(_velocity, Vector3.down * 0.5f, _time);
             }
         }
     }

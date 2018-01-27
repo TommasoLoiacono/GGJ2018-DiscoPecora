@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4039993352523706}
   - component: {fileID: 212517390669976734}
   - component: {fileID: 114167889897715008}
+  - component: {fileID: 114477486442728098}
   - component: {fileID: 61633117280857292}
   m_Layer: 9
   m_Name: Sheep
@@ -80,6 +81,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SmoothTime: 0.3
   inertiaDragAmount: 0.5
+--- !u!114 &114477486442728098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1250896972281420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cd16820df0dd34b975ae60eb6666e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eta: 0
+  sesso: 0
+  colorePelle: {fileID: 0}
+  coloreLana: {fileID: 0}
+  carattere: {fileID: 0}
 --- !u!212 &212517390669976734
 SpriteRenderer:
   m_ObjectHideFlags: 1
