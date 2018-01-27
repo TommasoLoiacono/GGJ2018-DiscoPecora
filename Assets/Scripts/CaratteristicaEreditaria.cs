@@ -7,13 +7,5 @@ public class CaratteristicaEreditaria : MonoBehaviour {
     public string valoreCaratteristica; // Se la lana è blu ad esempio, viene scritto qua "blu". Mantenete una scrittura della caratteristica in minuscolo. Il codice è fatto in modo di formattare il pc se trova un carattere maiuscolo in questo campo
     public int carattereDominante; //0=recessivo, 1=dominante. Figo vero? Potevo usare un bool ma non ho avuto un granchè voglia
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

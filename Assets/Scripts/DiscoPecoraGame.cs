@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiscoPecoraGame : MonoBehaviour {
+
     public GameObject StampoPecora;
-    public List<Pecora> pecoreInGioco = new List<Pecora>(); // Eh già, la lista delle pecore che ci sono in gioco. Fenomenale, lo so.
+    public List<GameObject> pecoreInGioco = new List<GameObject>(); // Eh già, la lista delle pecore che ci sono in gioco. Fenomenale, lo so.
                                                             //  public ArrayList aggettiviColorePelle = new ArrayList();
     public ArrayList listaNomiMaschili = new ArrayList(new string[] { "pippo", "gino", "genoveffo" });
     public ArrayList listaNomiFemminili = new ArrayList(new string[] { "pippa", "gina", "genoveffa" });
@@ -15,6 +16,12 @@ public class DiscoPecoraGame : MonoBehaviour {
     public Pecora pecoraSuprema = new Pecora();
     public Pecora pecoraSx;
     public Pecora pecoraDx;
+    public int punteggio;
+    public bool giocoAttivo = true;
+    public float secondiPerGenerarePecora = 5f;
+    public int numeroMassimoPecore = 50;
+    public float tempoPerInvecchiarePecore = 6f;
+    public int etaMorte = 4;
 
 
 
@@ -30,10 +37,61 @@ public class DiscoPecoraGame : MonoBehaviour {
     // Use this for initialization
     void Start() {
         pecoraSuprema = RandomizzaPecora();
-       // StartCoroutine(Populate());
+        StartCoroutine(GeneraPecore());
+        StartCoroutine(InvecchiaPecore());
+        // StartCoroutine(Populate());
 
     }
 
+
+    IEnumerator InvecchiaPecore()
+    {
+        while (giocoAttivo)
+        {
+            yield return new WaitForSeconds(tempoPerInvecchiarePecore);
+            print("invecchio");
+            foreach(GameObject pecora in pecoreInGioco)
+            {
+                pecora.GetComponent<Pecora>().eta++;
+                print(pecora.GetComponent<Pecora>().eta);
+                if (pecora.GetComponent<Pecora>().eta >= etaMorte)
+                {
+                    if (pecora == pecoraDx)
+                    {
+                        //No necrofilia sx
+                    }
+                    else
+                    {
+                        if (pecora == pecoraSx)
+                        {
+                            //No necrofilia dx
+                        }
+                        else
+                        {
+                            Destroy(pecora);
+                        }
+                    }
+                }
+            }
+             pecoreInGioco.RemoveAll(item => item.GetComponent<Pecora>().eta >= etaMorte);
+        }
+        
+    }
+
+    IEnumerator GeneraPecore()
+    {
+        while (giocoAttivo) { 
+        yield return new WaitForSeconds(secondiPerGenerarePecora);
+            print("Numero lista " + pecoreInGioco.Count);
+            if (pecoreInGioco.Count <= numeroMassimoPecore)
+            {
+                Vector3 spawnPos = new Vector3(Random.Range(-9, 9), Random.Range(-2, 4), 0f);
+                CreaPecora(RandomizzaPecora(), spawnPos);
+            }
+        }
+    }
+
+     //deprecato
     IEnumerator Populate()
     {
         layerWidth = screenSizeX / 2;
@@ -49,6 +107,7 @@ public class DiscoPecoraGame : MonoBehaviour {
         yield return null;
     }
 
+    //deprecato
     public void Generate()
     {
         layerWidth = screenSizeX / 2;
@@ -116,7 +175,9 @@ public class DiscoPecoraGame : MonoBehaviour {
     public void CreaPecora(Pecora p, Vector3 t)
     {
         GameObject nuovaPecora = Instantiate(StampoPecora, t, Quaternion.identity, transform);
+        pecoreInGioco.Add(nuovaPecora);
         nuovaPecora.GetComponent<Pecora>().InstanziaPecora(p.eta, p.sesso,  p.colorePelle,  p.colorePelle, p.carattere, p.nome);
+
         ControllaSeHaiPecoraSuprema(nuovaPecora.GetComponent<Pecora>());
 
 
@@ -125,7 +186,7 @@ public class DiscoPecoraGame : MonoBehaviour {
     public Pecora RandomizzaPecora()
     {
         Pecora p = new Pecora();
-        int eta = Random.Range(0, 3);
+        int eta = Random.Range(0, etaMorte);
         int sesso = Random.Range(0, 2);
         
         CaratteristicaEreditaria colorePelle = new CaratteristicaEreditaria();
@@ -168,7 +229,9 @@ public class DiscoPecoraGame : MonoBehaviour {
             {
                 if (pecoraSuprema.coloreLana.valoreCaratteristica == p.coloreLana.valoreCaratteristica)
                 {
-                    print("Hai vinciuto");
+                    // print("Hai vinciuto");
+                    punteggio += 50;
+                    pecoraSuprema = RandomizzaPecora();
                 }
             }
         }

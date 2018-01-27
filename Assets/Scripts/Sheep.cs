@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+using System.Collections;
+using System.Collections.Generic;
+
 public class Sheep : MonoBehaviour {
 
     public float SmoothTime;
@@ -10,11 +13,20 @@ public class Sheep : MonoBehaviour {
     private bool _underInertia = false;
     private bool dragging = false;
     private float _time = 0f;
+    private Vector3 startPosition;
     private Vector3 _screenPoint;
     private Vector3 _offset;
     private Vector3 _curScreenPoint;
     private Vector3 _curPosition;
     private Vector3 _velocity;
+    private float startTime;
+    private bool CR_running;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+        startTime = Time.time;
+    }
 
     void Update () {
 
@@ -48,15 +60,15 @@ public class Sheep : MonoBehaviour {
             {
                 transform.position += _velocity;
                 _velocity = Vector3.Lerp(_velocity, Vector3.down * 0.5f, _time);
-                if (transform.position.x >= 17.5)
+                if (transform.position.x >= 17.5f)
                 {
                     _velocity.x = -Mathf.Abs(_velocity.x);
                 }
-                if (transform.position.x <= -17.5)
+                if (transform.position.x <= -17.5f)
                 {
                     _velocity.x = Mathf.Abs(_velocity.x);
                 }
-                if (transform.position.y >= 10)
+                if (transform.position.y >= 10f)
                 {
                     _velocity.y = -0.3f;
                 }
@@ -71,9 +83,44 @@ public class Sheep : MonoBehaviour {
             {
                 _underInertia = false;
                 _time = 0.0f;
+                if(!CR_running)
+                    StartCoroutine("MoveAround",Random.Range(0,2));
 
             }
         }
+    }
+
+    IEnumerator DanzingAround()
+    {
+        yield return null;
+    }
+
+    IEnumerator MoveAround(int dir)
+    {
+       // Debug.Log(dir);
+        CR_running = true;
+        float startT = Time.time;
+        int x, y = 0;
+        if(dir==0)
+        {
+            x = Random.Range(0, 9);
+            y = Random.Range(0, 4);
+            dir = -1;
+
+        }
+        else
+        {
+            x = Random.Range(-9, 0);
+            y = Random.Range(-2, 0);
+
+        }
+
+        float _time = Random.Range(2, 3);
+        while (Time.time-startT<_time && Camera.main.GetComponent<Collider2D>().bounds.Contains(transform.position)) {
+            transform.position += Vector3.Lerp(startPosition, new Vector3(x,y,0f).normalized, Mathf.PingPong(Time.deltaTime * _time, 1.0f));
+            yield return null;
+        }
+        CR_running = false;
     }
 
     private void OnMouseOver()
