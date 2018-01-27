@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameplayPanelController : MonoBehaviour {
 
+    UIManager UIMng;
     SheepDisplayer[] _sheepDisplayers;
     public Sprite LeftDisplayerOpen;
     public Sprite RightDisplayerOpen;
@@ -12,25 +13,27 @@ public class GameplayPanelController : MonoBehaviour {
     public Sprite RightDisplayerClose;
     public Text CounterText;
 
-    public void Init () {
+    public void Init (UIManager _manager) {
+        UIMng = _manager;
         _sheepDisplayers = GetComponentsInChildren<SheepDisplayer>();
         _sheepDisplayers[0].Init(LeftDisplayerOpen, LeftDisplayerClose);
         _sheepDisplayers[1].Init(RightDisplayerOpen, RightDisplayerClose);
     }
 
-    public void ShowSheepDatas(Pecora _data)
+    public void ShowSheepDatas(Pecora _pecora, bool _isLeftClick)
     {
-        if (!_sheepDisplayers[0].IsUsed)
+        //Chiama la spotlight
+        if (_isLeftClick)
         {
-            _sheepDisplayers[0].SetupCard(_data);
-        }
-        else if (!_sheepDisplayers[1].IsUsed)
-        {
-            _sheepDisplayers[1].SetupCard(_data);
+            _sheepDisplayers[0].SetupCard(_pecora);
+            UIMng.SpotLight1.MoveSpotLightToPosition(_pecora.transform.position);
         }
         else
-            _sheepDisplayers[0].SetupCard(_data);
+        {
+            _sheepDisplayers[1].SetupCard(_pecora);
+            UIMng.SpotLight2.MoveSpotLightToPosition(_pecora.transform.position);
 
+        }
     }
 }
 

@@ -5,7 +5,9 @@ using UnityEngine;
 public class DiscoPecoraGame : MonoBehaviour {
     public GameObject StampoPecora;
     public List<Pecora> pecoreInGioco = new List<Pecora>(); // Eh già, la lista delle pecore che ci sono in gioco. Fenomenale, lo so.
-  //  public ArrayList aggettiviColorePelle = new ArrayList();
+                                                            //  public ArrayList aggettiviColorePelle = new ArrayList();
+    public ArrayList listaNomiMaschili = new ArrayList(new string[] { "pippo", "gino", "genoveffo" });
+    public ArrayList listaNomiFemminili = new ArrayList(new string[] { "pippa", "gina", "genoveffa" });
     public ArrayList aggettiviColorePelle = new ArrayList(new string[] { "blu", "rosso", "giallo" });
     public ArrayList aggettiviColoreLana = new ArrayList(new string[] { "blu", "rosso", "giallo" });
     public ArrayList aggettiviCarattere = new ArrayList(new string[] { "blu", "rosso", "giallo" });
@@ -25,7 +27,7 @@ public class DiscoPecoraGame : MonoBehaviour {
     // Use this for initialization
     void Start() {
         pecoraSuprema = RandomizzaPecora();
-        StartCoroutine(Populate());
+       // StartCoroutine(Populate());
 
     }
 
@@ -46,6 +48,23 @@ public class DiscoPecoraGame : MonoBehaviour {
         }
         yield return null;
 
+    }
+
+    public void Generate()
+    {
+        layerWidth = screenSizeX / 2;
+        layerHeight = screenSizeY / 2;
+
+        numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
+
+        for (int i = 0; i < numberOfSheeps; i++)
+        {
+            Vector3 spawnPos = new Vector3(randomDisplacement(layerWidth),
+                randomDisplacement(layerHeight),
+                0f);
+            CreaPecora(RandomizzaPecora(), spawnPos);
+            Debug.Log("Pecora");
+        }
     }
 
     float randomDisplacement(float width)
@@ -99,7 +118,7 @@ public class DiscoPecoraGame : MonoBehaviour {
     public void CreaPecora(Pecora p, Vector3 t)
     {
         GameObject nuovaPecora = Instantiate(StampoPecora, t, Quaternion.identity, transform);
-        nuovaPecora.GetComponent<Pecora>().InstanziaPecora(p.eta, p.sesso,  p.colorePelle,  p.colorePelle, p.carattere);
+        nuovaPecora.GetComponent<Pecora>().InstanziaPecora(p.eta, p.sesso,  p.colorePelle,  p.colorePelle, p.carattere, p.nome);
         ControllaSeHaiPecoraSuprema(nuovaPecora.GetComponent<Pecora>());
 
 
@@ -110,6 +129,7 @@ public class DiscoPecoraGame : MonoBehaviour {
         Pecora p = new Pecora();
         int eta = Random.Range(0, 3);
         int sesso = Random.Range(0, 2);
+        
         CaratteristicaEreditaria colorePelle = new CaratteristicaEreditaria();
         colorePelle.tipoCaratteristica = 0;
 
@@ -126,8 +146,19 @@ public class DiscoPecoraGame : MonoBehaviour {
         carattere.tipoCaratteristica = 2;
         carattere.valoreCaratteristica = aggettiviCarattere[Random.Range(0, aggettiviCarattere.Count )].ToString();
         carattere.carattereDominante = SorteggiaDominanteORecessivo();
+        string nome;
 
-        p.InstanziaPecora(eta, sesso,  colorePelle,  coloreLana,  carattere);
+        if (sesso == 0)
+        {
+            nome = listaNomiMaschili[Random.Range(0, listaNomiMaschili.Count)].ToString();
+        }
+        else
+        {
+            nome = listaNomiFemminili[Random.Range(0, listaNomiFemminili.Count)].ToString();
+
+        }
+
+        p.InstanziaPecora(eta, sesso,  colorePelle,  coloreLana,  carattere, nome);
         return p;
         }
 

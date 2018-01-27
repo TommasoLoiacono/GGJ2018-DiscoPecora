@@ -8,11 +8,14 @@ public class UIManager : MonoBehaviour {
     [HideInInspector]
     public MainMenuController mainMenuCtrl;
 
+    public SpotLightController SpotLight1;
+    public SpotLightController SpotLight2;
+
     public void Init()
     {
         gameplayCtrl = GetComponentInChildren<GameplayPanelController>();
         mainMenuCtrl= GetComponentInChildren<MainMenuController>();
-        gameplayCtrl.Init();
+        gameplayCtrl.Init(this);
     }
 
     public  void MenuActions()

@@ -75,27 +75,45 @@ public class Sheep : MonoBehaviour {
             }
         }
     }
-    
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            GameManager.I.UIMng.gameplayCtrl.ShowSheepDatas(GetComponent<Pecora>(), false);
+        }
+    }
+
     void OnMouseDown()
     {
         _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
         _underInertia = false;
+        GameManager.I.UIMng.gameplayCtrl.ShowSheepDatas(GetComponent<Pecora>(), true);
     }
+
+    float timer = .2f;
+
     void OnMouseDrag()
     {
-        Vector3 _prevPosition = _curPosition;
-        _curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
-        _curPosition = Camera.main.ScreenToWorldPoint(_curScreenPoint) + _offset;
-        _velocity = _curPosition - _prevPosition;
-        transform.position = _curPosition;
-        dragging = true;
-        _underInertia = true;
+        if (timer <= 0)
+        {
+            Vector3 _prevPosition = _curPosition;
+            _curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
+            _curPosition = Camera.main.ScreenToWorldPoint(_curScreenPoint) + _offset;
+            _velocity = _curPosition - _prevPosition;
+            transform.position = _curPosition;
+            dragging = true;
+            _underInertia = true;
+            return;
+        }
+        timer -= Time.deltaTime;
     }
 
     private void OnMouseUp()
     {
         dragging = false;
+        timer = .2f;
     }
     
 }

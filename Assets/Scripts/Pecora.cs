@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pecora : MonoBehaviour {
+    public string nome; //uots iur neim
     public int eta; // 0,1,2. Ve la vedete poi voi
     public int sesso; // 0 maschio, 1 femmina. Se sommo due individui ottengo: 0 = frociazzi, 1 = coppia etero famiglia tradizionale no giender , 2= AH LESBICAH, OGGI HO FATTO I SOLDI LESBICAH
     public CaratteristicaEreditaria colorePelle; // Il colore della pelle della pecora. Se non ci eri arrivato leggendo l'identificativo probabilmente dovresti cambiare mestiere
@@ -19,14 +20,14 @@ public class Pecora : MonoBehaviour {
 
 	}
 
-    public void InstanziaPecora(int etaV, int sessoV,  CaratteristicaEreditaria colorePelleV, CaratteristicaEreditaria coloreLanaV, CaratteristicaEreditaria carattereV)
+    public void InstanziaPecora(int etaV, int sessoV,  CaratteristicaEreditaria colorePelleV, CaratteristicaEreditaria coloreLanaV, CaratteristicaEreditaria carattereV, string nomeV)
     {
         eta = etaV;
         sesso = sessoV;
         colorePelle = colorePelleV;
         coloreLana = coloreLanaV;
         carattere = carattereV;
-        print("ee");
+        nome = nomeV;
     }
 
     // Accoppiamento. Non guardate questa funzione a lungo o potreste eccitarvi

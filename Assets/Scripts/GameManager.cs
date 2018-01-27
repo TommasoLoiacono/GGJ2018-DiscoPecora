@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
     public static GameManager I;
 
     public GameObject UIManagerPrefab;
-    public GameObject DiscoPecoraTheGamePrefab;
 
     [HideInInspector]
     public UIManager UIMng;
@@ -60,12 +59,16 @@ public class GameManager : MonoBehaviour {
         else
             DestroyImmediate(gameObject);
 
+        DiscoPecora = GetComponent<DiscoPecoraGame>();
+        Init();                                                 //TODO: Da spostare nella macchina a stati
         Cursor.lockState = CursorLockMode.Confined;
 	}
 	
     public void Init()
     {
-        Instantiate(UIManagerPrefab, transform);
+        UIMng = Instantiate(UIManagerPrefab, transform).GetComponent<UIManager>();
+        UIMng.Init();
+        CurrentState = FlowState.MainMenu;
     }
 
     void MenuActions()
@@ -76,6 +79,7 @@ public class GameManager : MonoBehaviour {
     void GameplayActions()
     {
         UIMng.GameplayActions();
+        DiscoPecora.Generate();
     }
 
     void GameOverActions()
