@@ -10,9 +10,7 @@ public class Sheep : MonoBehaviour {
     public float inertiaDragAmount;
 
     private bool _underInertia = false;
-    private bool isDraggable = false;
     private bool dragging = false;
-    private float distance;
     private float _time = 0f;
     private Vector3 _screenPoint;
     private Vector3 _offset;
@@ -20,10 +18,9 @@ public class Sheep : MonoBehaviour {
     private Vector3 _curPosition;
     private Vector3 _velocity;
 
-    // Update is called once per frame
     void Update () {
 
-        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
+        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 30f) * -1;
 
         Vector3 p = new Vector3();
         Camera c = Camera.main;
@@ -41,6 +38,10 @@ public class Sheep : MonoBehaviour {
             p.z = 0;
 
             transform.position = Vector3.Lerp(transform.position, p, inertiaDragAmount);
+            if (Mathf.Abs(transform.position.x) >= 17.5)
+                transform.position = new Vector3(17.5f * Mathf.Sign(transform.position.x), transform.position.y, 0);
+            if (Mathf.Abs(transform.position.y) >= 10)
+                transform.position = new Vector3(transform.position.x, 10 * Mathf.Sign(transform.position.y), 0);
 
         }
         else
@@ -48,7 +49,16 @@ public class Sheep : MonoBehaviour {
             if (_underInertia && _time <= SmoothTime)
             {
                 transform.position += _velocity;
-                _velocity = Vector3.Lerp(_velocity, Vector3.zero, _time);
+                _velocity = Vector3.Lerp(_velocity, Vector3.down*0.5f, _time);
+                if (transform.position.x >= 17.5)
+                    _velocity.x = - Mathf.Abs(_velocity.x);
+                if (transform.position.x <= -17.5)
+                    _velocity.x = Mathf.Abs(_velocity.x);
+                if (transform.position.y >= 10)
+                    _velocity.y = -0.3f;
+                if (transform.position.y <= -9)
+                    _velocity.y = 0;
+
                 _time += Time.smoothDeltaTime;
             }
             else
