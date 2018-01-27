@@ -4,13 +4,86 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public static GameManager I;
+
+    public GameObject UIManagerPrefab;
+    public GameObject DiscoPecoraTheGamePrefab;
+
+    [HideInInspector]
+    public UIManager UIMng;
+    [HideInInspector]
+    public DiscoPecoraGame DiscoPecora;
+
+    #region GameFlow StateMachine
+    private FlowState _currentState;
+
+    public FlowState CurrentState
+    {
+        get { return _currentState; }
+        private set
+        {
+            FlowState oldState = _currentState;
+            _currentState = value;
+            OnStateChanged(_currentState, oldState);
+        }
+    }
+
+    void OnStateChanged(FlowState _newState, FlowState _oldState)
+    {
+        switch (_newState)
+        {
+            case FlowState.MainMenu:
+                MenuActions();
+                break;
+            case FlowState.Gameplay:
+                GameplayActions();
+                break;
+            case FlowState.Gameover:
+                GameOverActions();
+                break;
+        }
+    }
+
+    public void ChangeState(FlowState _stateToSet)
+    {
+        CurrentState = _stateToSet;
+    }
+    #endregion
+
+    // Use this for initialization
+    void Start () {
+        if (I == null)
+            I = this;
+        else
+            DestroyImmediate(gameObject);
+
         Cursor.lockState = CursorLockMode.Confined;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void Init()
+    {
+        Instantiate(UIManagerPrefab, transform);
+    }
+
+    void MenuActions()
+    {
+        UIMng.MenuActions();
+    }
+
+    void GameplayActions()
+    {
+        UIMng.GameplayActions();
+    }
+
+    void GameOverActions()
+    {
+
+    }
+}
+
+public enum FlowState
+{
+    MainMenu,
+    Gameplay,
+    Gameover
 }
