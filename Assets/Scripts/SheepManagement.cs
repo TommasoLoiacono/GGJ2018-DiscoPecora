@@ -6,36 +6,45 @@ using UnityEngine;
 public class SheepManagement : MonoBehaviour
 {
     public GameObject sheep;
+    public List<GameObject> listaPecore = new List<GameObject>();
     public float minNumberOfSheeps;
     public float maxNumberOfSheeps;
     public float yRandomDisplacement, xRandomDisplacement;
-
+    public int screenSizeX, screenSizeY;
     private float layerWidth, layerHeight;
     private int numberOfSheeps;
 
+
     private void Start()
     {
-        Populate();
+        StartCoroutine(Populate());
     }
 
-    internal void Populate()
+    IEnumerator Populate()
     {
-        layerWidth = GetComponent<BoxCollider2D>().size.x/2;
-        layerHeight = GetComponent<BoxCollider2D>().size.y/2;
+        layerWidth = screenSizeX/2;
+        layerHeight = screenSizeY/2;
 
         numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
 
         for (int i = 0; i < numberOfSheeps; i++)
         {
-            var spawnPos = new Vector3(randomDisplacement(layerWidth),
+            Vector3 spawnPos = new Vector3(randomDisplacement(layerWidth),
                 randomDisplacement(layerHeight),
                 0f);
-            Instantiate(sheep, spawnPos, Quaternion.identity, transform);
+            GameObject pecora = Instantiate(sheep, spawnPos, Quaternion.identity, transform);
+            listaPecore.Add(pecora);
         }
+        yield return null;
+
     }
 
     float randomDisplacement(float width)
     {
-        return UnityEngine.Random.Range(-1f, 1f) * width;
+       float f =UnityEngine.Random.Range(-1f, 1f) * width;
+       int i = (int)f;
+        float c = i;
+        return c;
+
     }
 }

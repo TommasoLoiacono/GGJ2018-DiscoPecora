@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4088110865406152}
   - component: {fileID: 61393743474580332}
-  - component: {fileID: 114422503404703674}
+  - component: {fileID: 114195361141626224}
   m_Layer: 8
   m_Name: DiscoFloor
   m_TagString: Untagged
@@ -66,7 +66,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30, y: 15}
   m_EdgeRadius: 0
---- !u!114 &114422503404703674
+--- !u!114 &114195361141626224
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -74,11 +74,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1070093731654440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0069a7e475ecf64792e4e417ef3b9c2, type: 3}
+  m_Script: {fileID: 11500000, guid: aba0e17d0c5efae479505bd0a63f8cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheep: {fileID: 1250896972281420, guid: 239714f728025b247bbebce6dc1bdd85, type: 2}
-  minNumberOfSheeps: 10
-  maxNumberOfSheeps: 60
-  yRandomDisplacement: 1
-  xRandomDisplacement: 1
+  StampoPecora: {fileID: 1250896972281420, guid: 239714f728025b247bbebce6dc1bdd85,
+    type: 2}
+  pecoreInGioco: []
+  probabilitaGenerazioneDominante: 0.5
+  pecoraSuprema: {fileID: 0}
+  minNumberOfSheeps: 0
+  maxNumberOfSheeps: 0
+  yRandomDisplacement: 0
+  xRandomDisplacement: 0
+  screenSizeX: 0
+  screenSizeY: 0
