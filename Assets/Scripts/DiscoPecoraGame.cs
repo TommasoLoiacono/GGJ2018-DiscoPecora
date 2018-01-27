@@ -31,26 +31,30 @@ public class DiscoPecoraGame : MonoBehaviour {
 
     }
 
-    IEnumerator Populate()
-    {
-        layerWidth = screenSizeX / 2;
-        layerHeight = screenSizeY / 2;
+    ///Copied in the next function for initializate the generation of the sheep in Gameplay State. 
+    //IEnumerator Populate()
+    //{
+    //    layerWidth = screenSizeX / 2;
+    //    layerHeight = screenSizeY / 2;
 
-        numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
+    //    numberOfSheeps = (int)UnityEngine.Random.Range(minNumberOfSheeps, maxNumberOfSheeps);
 
-        for (int i = 0; i < numberOfSheeps; i++)
-        {
-            Vector3 spawnPos = new Vector3(randomDisplacement(layerWidth),
-                randomDisplacement(layerHeight),
-                0f);
-            CreaPecora(RandomizzaPecora(), spawnPos);
-            Debug.Log("Pecora");
-        }
-        yield return null;
+    //    for (int i = 0; i < numberOfSheeps; i++)
+    //    {
+    //        Vector3 spawnPos = new Vector3(randomDisplacement(layerWidth),
+    //            randomDisplacement(layerHeight),
+    //            0f);
+    //        CreaPecora(RandomizzaPecora(), spawnPos);
+    //        Debug.Log("Pecora");
+    //    }
+    //    yield return null;
 
-    }
+    //}
 
-    public void Generate()
+    /// <summary>
+    /// Callad to instantiate the sheeps in the scene
+    /// </summary>
+    public void Populate()
     {
         layerWidth = screenSizeX / 2;
         layerHeight = screenSizeY / 2;
