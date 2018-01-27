@@ -14,10 +14,14 @@ public class Sheep : MonoBehaviour {
     private bool dragging = false;
     private float distance;
     private float _time = 0f;
-
+    private Vector3 _screenPoint;
+    private Vector3 _offset;
+    private Vector3 _curScreenPoint;
+    private Vector3 _curPosition;
+    private Vector3 _velocity;
 
     // Update is called once per frame
-	void Update () {
+    void Update () {
 
         GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
 
@@ -43,7 +47,8 @@ public class Sheep : MonoBehaviour {
         {
             if (_underInertia && _time <= SmoothTime)
             {
-                transform.position = Vector3.Lerp(transform.position, p, _time);
+                transform.position += _velocity;
+                _velocity = Vector3.Lerp(_velocity, Vector3.zero, _time);
                 _time += Time.smoothDeltaTime;
             }
             else
@@ -54,8 +59,19 @@ public class Sheep : MonoBehaviour {
         }
     }
 
-    private void OnMouseDrag()
+    void OnMouseDown()
     {
+        _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
+        _underInertia = false;
+    }
+    void OnMouseDrag()
+    {
+        Vector3 _prevPosition = _curPosition;
+        _curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
+        _curPosition = Camera.main.ScreenToWorldPoint(_curScreenPoint) + _offset;
+        _velocity = _curPosition - _prevPosition;
+        transform.position = _curPosition;
         dragging = true;
         _underInertia = true;
     }
