@@ -68,7 +68,7 @@ public class DiscoPecoraGame : MonoBehaviour {
                         }
                         else
                         {
-                            Destroy(pecora);
+                            pecora.GetComponent<Animator>().SetBool("Dead",true);
                         }
                     }
                 }

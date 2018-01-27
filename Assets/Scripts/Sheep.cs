@@ -167,5 +167,10 @@ public class Sheep : MonoBehaviour {
         dragging = false;
         timer = .2f;
     }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
     
 }
