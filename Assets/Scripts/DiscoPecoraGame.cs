@@ -104,7 +104,6 @@ public class DiscoPecoraGame : MonoBehaviour {
             Vector3 spawnPos = new Vector3(Random.Range(-9,9),Random.Range(-2,4), 0f);
             Debug.Log("Pecora");
         }
-        yield return null;
     }
 
     //deprecato
