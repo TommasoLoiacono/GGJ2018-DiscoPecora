@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Sheep : MonoBehaviour {
 
@@ -68,7 +66,7 @@ public class Sheep : MonoBehaviour {
             }
         }
     }
-
+    
     void OnMouseDown()
     {
         _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -90,7 +88,5 @@ public class Sheep : MonoBehaviour {
     {
         dragging = false;
     }
-
-
-
+    
 }
