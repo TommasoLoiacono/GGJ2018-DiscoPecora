@@ -8,6 +8,7 @@ public class SheepDisplayer : MonoBehaviour {
     public Image SheepPhoto;
     public Text SheepText;
     public Text NameText;
+    
 
     private string dominantColor= "<color=#7DB24A>";
     private string recessiveColor = "<color=#BC3A41>";
@@ -21,6 +22,10 @@ public class SheepDisplayer : MonoBehaviour {
     //    _imageOn = _ImageOn;
     //    _imageOff = _ImageOff;
     //}
+    public void SetBackgroundForGoalDisplayer(Sprite _backgroundSprite)
+    {
+        GetComponent<Image>().sprite = _backgroundSprite;
+    }
 
     /// <summary>
     /// Set the text displayed in the card

@@ -14,6 +14,9 @@ public class GameplayPanelController : MonoBehaviour {
     public SheepDisplayer GoalTab;
     public Text CounterText;
 
+    public Sprite MaleGoalSprite;
+    public Sprite FemaleGoalSprite;
+
     public void Init (UIManager _manager) {
         UIMng = _manager;
         _sheepDisplayers = GetComponentsInChildren<SheepDisplayer>();
@@ -23,6 +26,12 @@ public class GameplayPanelController : MonoBehaviour {
 
     public void SetGoalTabText(Pecora _pecora)
     {
+        //Set Image of goal tab
+        if (_pecora.sesso == 0)
+            GoalTab.SetBackgroundForGoalDisplayer(MaleGoalSprite);
+        if (_pecora.sesso == 1)
+            GoalTab.SetBackgroundForGoalDisplayer(FemaleGoalSprite);
+
         GoalTab.SetText(_pecora, true);
     }
 
