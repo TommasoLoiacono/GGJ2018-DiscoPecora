@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 222811424520298482}
   - component: {fileID: 114798435968365800}
   m_Layer: 5
-  m_Name: Counter
+  m_Name: PointsCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoalTab: {fileID: 114584679063558652}
-  CounterText: {fileID: 114585365466309598}
+  PointsCounter: {fileID: 114585365466309598}
   MaleGoalSprite: {fileID: 21300000, guid: 54a0faa9e40e4ba4794ba9b736266ff9, type: 3}
   FemaleGoalSprite: {fileID: 21300000, guid: 363a839f79eaa884dbf92a121720a40c, type: 3}
 --- !u!114 &114238244080100180
@@ -1334,7 +1334,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: be77fe88b03653145b4856132cf443e0, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -1346,7 +1346,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'Points: 0'
 --- !u!114 &114604068906543448
 MonoBehaviour:
   m_ObjectHideFlags: 1
