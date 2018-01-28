@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   anim: {fileID: 114826970979108552}
+  selectedDance: default-dance
 --- !u!114 &114596743490398634
 MonoBehaviour:
   m_ObjectHideFlags: 1
