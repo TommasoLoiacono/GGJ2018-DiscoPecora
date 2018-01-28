@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b8d2c93a3888f47bfab0c11f1c74bb, type: 3}
+  m_Name: HeroTestColor
+  m_EditorClassIdentifier: 
+  geneStr: 0
+  affectedBodyParts:
+  - slotName: 
+    color:
+      serializedVersion: 2
+      rgba: 4289461658
+  - slotName: 
+    color:
+      serializedVersion: 2
+      rgba: 4288190719
+  - slotName: 
+    color:
+      serializedVersion: 2
+      rgba: 4286348412
+  - slotName: 
+    color:
+      serializedVersion: 2
+      rgba: 4281138944
