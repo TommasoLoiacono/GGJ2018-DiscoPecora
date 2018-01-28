@@ -9,6 +9,8 @@ public class SheepDisplayer : MonoBehaviour {
     public Text SheepText;
     public Text NameText;
 
+    private string dominantColor= "<color=#7DB24A>";
+    private string recessiveColor = "<color=#BC3A41>";
 
     //Sprite _imageOn;
     //Sprite _imageOff;
@@ -44,7 +46,9 @@ public class SheepDisplayer : MonoBehaviour {
         }
         if (!_isGoalSheep)
             NameText.text = _sheep.nome; 
-        SheepText.text = "Sex: " + sexString + " - Lana: " + _sheep.colorePelle.valoreCaratteristica +" - Pelle: " + _sheep.colorePelle.valoreCaratteristica + " - Carattere: " + _sheep.carattere.valoreCaratteristica;
+
+
+        SheepText.text = "Sex: " + sexString + " - Lana: "+((_sheep.coloreLana.carattereDominante==1)?dominantColor:recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> - Pelle: "+(_sheep.colorePelle.carattereDominante==1?dominantColor:recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> - Carattere: "+(_sheep.carattere.carattereDominante==1?dominantColor:recessiveColor) + _sheep.carattere.valoreCaratteristica+"</color>";
     }
 
     /// <summary>

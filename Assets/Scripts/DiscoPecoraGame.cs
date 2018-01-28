@@ -7,9 +7,9 @@ public class DiscoPecoraGame : MonoBehaviour {
     public GameObject StampoPecora;
     public List<GameObject> pecoreInGioco = new List<GameObject>(); // Eh già, la lista delle pecore che ci sono in gioco. Fenomenale, lo so.
                                                             //  public ArrayList aggettiviColorePelle = new ArrayList();
-    public ArrayList listaNomiMaschili = new ArrayList(new string[] { "pippo", "gino", "genoveffo" });
-    public ArrayList listaNomiFemminili = new ArrayList(new string[] { "pippa", "gina", "genoveffa" });
-    public ArrayList aggettiviColorePelle = new ArrayList(new string[] { "blu", "rosso", "giallo" });
+    public ArrayList listaNomiMaschili = new ArrayList(new string[] { "Mario", "Luigi", "Bowser", "Kangaroo", "Teddy", "Vladimir", "Matteo", "Silvio", "Donald", "Zack", "Terkelton", "Ludwig", "Link", "Bernie", "Luke", "Todd", "Adamo", "Matthew", "Pier Luca", "Goffredo", "Francesco", "Sven", "Brucolo", "Rudolf", "Adolf", "Aldwin", "Jonnie", "John", "Ayeye", "Alvin", "Piero", "Ashby", "Piero", "Angelo", "Salvatore", "Yi Yong", "Carlo", "Ittikiom", "Ben J", "Asdrubale", "Annibale", "Attila", "Rollo", "Balto", "Montalbano", "Stefano","ASDF" });
+    public ArrayList listaNomiFemminili = new ArrayList(new string[] { "Viola", "Pippa", "Genoveffa", "Gina", "Verdania", "Erika", "Stefania", "Summer", "Jiu Li", "Yuhui Li", "Sibei", "Xun Wang", "Luisa", "Maria", "Maddalena", "Elisabetta", "Eva", "Audrey", "Jennifer", "Armie", "Rachel", "Monica", "Phoebe", "Piper", "Lara", "Prue", "Pamela", "Samantha", "Scarlett", "Lorde", "Andrea", "Giovanna", "Rosy", "Adriana", "Lucia", "Licia", "Zelda", "Peach", "Kendall" });
+    public ArrayList aggettiviColorePelle = new ArrayList(new string[] { "Pink", "Black", "Yellow" });
     public ArrayList aggettiviColoreLana = new ArrayList(new string[] { "blu", "rosso", "giallo" });
     public ArrayList aggettiviCarattere = new ArrayList(new string[] { "blu", "rosso", "giallo" });
     public float probabilitaGenerazioneDominante=0.5f;
