@@ -652,6 +652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoalTab: {fileID: 114584679063558652}
   CounterText: {fileID: 114585365466309598}
+  MaleGoalSprite: {fileID: 21300000, guid: 54a0faa9e40e4ba4794ba9b736266ff9, type: 3}
+  FemaleGoalSprite: {fileID: 21300000, guid: 363a839f79eaa884dbf92a121720a40c, type: 3}
 --- !u!114 &114238244080100180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -895,7 +897,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ad20172acc03021488bbebbbae63f1e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 363a839f79eaa884dbf92a121720a40c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

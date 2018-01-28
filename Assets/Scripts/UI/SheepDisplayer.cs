@@ -8,7 +8,7 @@ public class SheepDisplayer : MonoBehaviour {
     public Image SheepPhoto;
     public Text SheepText;
     public Text NameText;
-
+    
 
     //Sprite _imageOn;
     //Sprite _imageOff;
@@ -19,6 +19,10 @@ public class SheepDisplayer : MonoBehaviour {
     //    _imageOn = _ImageOn;
     //    _imageOff = _ImageOff;
     //}
+    public void SetBackgroundForGoalDisplayer(Sprite _backgroundSprite)
+    {
+        GetComponent<Image>().sprite = _backgroundSprite;
+    }
 
     /// <summary>
     /// Set the text displayed in the card
