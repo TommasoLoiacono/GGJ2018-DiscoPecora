@@ -36,6 +36,7 @@ public class PersonalityGenetics : GeneticBase
     {
 
         SkeletonAnimation anim = sheepGO.GetComponent<SkeletonAnimation>();
+        SpineFSM fsm = sheepGO.GetComponent<SpineFSM>();
 
         MakeNaked(anim);
 
@@ -52,21 +53,50 @@ public class PersonalityGenetics : GeneticBase
 
                 anim.skeleton.SetAttachment("head-accessories", "flower");
                 anim.skeleton.SetAttachment("collana-hippie", "collana-hippie");
+
+                fsm.selectedDance = "disco";
+
                 break;
             case PersonalityTypes.Aggressive:
                 //cigarette, bandana, boots
 
                 anim.skeleton.SetAttachment("head-accessories", "bandana");
                 anim.skeleton.SetAttachment("sigaretta", "sigaretta");
+                anim.skeleton.SetAttachment("shoes2", "stivale-1");
+                anim.skeleton.SetAttachment("shoes", "stivale-1");
+
+                fsm.selectedDance = "rock";
+
                 break;
             case PersonalityTypes.Yokel:
                 //air max, glasses with stripes, the belt with the dollar
+                anim.skeleton.SetAttachment("occhiali-hippie", "tamarro-glasses");
+                anim.skeleton.SetAttachment("shoes2", "elegant-shoes");
+                anim.skeleton.SetAttachment("shoes", "elegant-shoes");
+
+                fsm.selectedDance = "rave";
+
                 break;
             case PersonalityTypes.Chic:
                 //heels / pointy shoes, tie / earrings
+                anim.skeleton.SetAttachment("cravatta", "cravatta");
+                anim.skeleton.SetAttachment("shoes2", "heels");
+                anim.skeleton.SetAttachment("shoes", "heels");
+
+                fsm.selectedDance = "napolian dynomite";
+
                 break;
             case PersonalityTypes.Punk:
                 //necklace with studs, rainbow crest, lip earring
+                anim.skeleton.SetAttachment("head-accessories", "irokese");
+                anim.skeleton.SetAttachment("mouth-piercing", "mouth-piercing");
+                anim.skeleton.SetAttachment("collare-punk", "collare-punk");
+                anim.skeleton.SetAttachment("belt-tamarro", "belt-tamarro");
+                anim.skeleton.SetAttachment("shoes2", "sneakers");
+                anim.skeleton.SetAttachment("shoes", "sneakers");
+
+                fsm.selectedDance = "headbang";
+
                 break;
         }
     }
@@ -80,6 +110,7 @@ public class PersonalityGenetics : GeneticBase
         anim.skeleton.SetAttachment("headphones", null);
         anim.skeleton.SetAttachment("mouth-piercing", null);
         anim.skeleton.SetAttachment("sigaretta", null);
+        anim.skeleton.SetAttachment("cravatta", null);
         anim.skeleton.SetAttachment("collare-punk", null);
         anim.skeleton.SetAttachment("collana-hippie", null);
         anim.skeleton.SetAttachment("belt-tamarro-pelo", null);

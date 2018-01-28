@@ -15,4 +15,4 @@ MonoBehaviour:
   geneStr: 1
   leftHorn: 2
   rightHorn: 2
-  hornColor: {r: 0.875, g: 0.48253676, b: 0.48253676, a: 1}
+  hornColor: {r: 1, g: 0.75735295, b: 0.466, a: 1}

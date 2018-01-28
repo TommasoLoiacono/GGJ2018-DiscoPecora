@@ -51,11 +51,12 @@ public class Sheep : MonoBehaviour {
             p.z = 0;
 
             transform.position = Vector3.Lerp(transform.position, p, inertiaDragAmount);
-            if (Mathf.Abs(transform.position.x) >= 17.5)
-                transform.position = new Vector3(17.5f * Mathf.Sign(transform.position.x), transform.position.y, 0);
-            if (Mathf.Abs(transform.position.y) >= 10)
-                transform.position = new Vector3(transform.position.x, 10 * Mathf.Sign(transform.position.y), 0);
-
+            if (Mathf.Abs(transform.position.x) >= 8.75f)
+                transform.position = new Vector3(8.75f * Mathf.Sign(transform.position.x), transform.position.y, 0);
+            if (transform.position.y >= 4f)
+                transform.position = new Vector3(transform.position.x, 4, 0);
+            if (transform.position.y <= -6f)
+                transform.position = new Vector3(transform.position.x, -6f, 0);
         }
         else
         {
@@ -63,19 +64,19 @@ public class Sheep : MonoBehaviour {
             {
                 transform.position += _velocity;
                 _velocity = Vector3.Lerp(_velocity, Vector3.down * 0.5f, _time);
-                if (transform.position.x >= 17.5f)
+                if (transform.position.x >= 8f)
                 {
                     _velocity.x = -Mathf.Abs(_velocity.x);
                 }
-                if (transform.position.x <= -17.5f)
+                if (transform.position.x <= -8f)
                 {
                     _velocity.x = Mathf.Abs(_velocity.x);
                 }
-                if (transform.position.y >= 10f)
+                if (transform.position.y >= 4f)
                 {
                     _velocity.y = -0.3f;
                 }
-                if (transform.position.y <= -9)
+                if (transform.position.y <= -6f)
                 {
                     Debug.Log("ciao");
                     _velocity.y = 0;

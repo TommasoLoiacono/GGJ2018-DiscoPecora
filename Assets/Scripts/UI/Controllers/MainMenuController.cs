@@ -13,6 +13,14 @@ public class MainMenuController : MonoBehaviour {
     }
 
     /// <summary>
+    /// Activate the credits panel
+    /// </summary>
+    public void ActivateCredits()
+    {
+        GameManager.I.UIMng.ActivateCreditsPanel();
+    }
+
+    /// <summary>
     /// Called by the button Exit
     /// </summary>
     public void QuitApplication()
