@@ -1,0 +1,27 @@
+
+clouds.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx-1
+  rotate: false
+  xy: 2, 98
+  size: 145, 148
+  orig: 145, 148
+  offset: 0, 0
+  index: -1
+fx-2
+  rotate: true
+  xy: 149, 137
+  size: 109, 105
+  orig: 109, 105
+  offset: 0, 0
+  index: -1
+fx-3
+  rotate: false
+  xy: 2, 2
+  size: 97, 94
+  orig: 97, 94
+  offset: 0, 0
+  index: -1
