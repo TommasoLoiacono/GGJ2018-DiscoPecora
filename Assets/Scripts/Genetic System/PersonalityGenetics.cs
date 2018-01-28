@@ -43,14 +43,30 @@ public class PersonalityGenetics : GeneticBase
         switch(personality)
         {
             case PersonalityTypes.alternativo:
+                //little flower on the head, hippie necklace with the symbol of the peace, john lennon glasses
+                
+                if (UnityEngine.Random.Range(1, 100) >= 50)
+                    anim.skeleton.SetAttachment("occhiali-hippie", "occhiali-hippie");
+                else
+                    anim.skeleton.SetAttachment("occhiali-hippie", "tamarro-glasses");
+
+                anim.skeleton.SetAttachment("head-accessories", "flower");
+                anim.skeleton.SetAttachment("collana-hippie", "collana-hippie");
                 break;
             case PersonalityTypes.aggressivo:
+                //cigarette, bandana, boots
+
+                anim.skeleton.SetAttachment("head-accessories", "bandana");
+                anim.skeleton.SetAttachment("sigaretta", "sigaretta");
                 break;
             case PersonalityTypes.yokel:
+                //air max, glasses with stripes, the belt with the dollar
                 break;
             case PersonalityTypes.chic:
+                //heels / pointy shoes, tie / earrings
                 break;
             case PersonalityTypes.punkabbestia:
+                //necklace with studs, rainbow crest, lip earring
                 break;
         }
     }
@@ -63,6 +79,7 @@ public class PersonalityGenetics : GeneticBase
         anim.skeleton.SetAttachment("earrings", null);
         anim.skeleton.SetAttachment("headphones", null);
         anim.skeleton.SetAttachment("mouth-piercing", null);
+        anim.skeleton.SetAttachment("sigaretta", null);
         anim.skeleton.SetAttachment("collare-punk", null);
         anim.skeleton.SetAttachment("collana-hippie", null);
         anim.skeleton.SetAttachment("belt-tamarro-pelo", null);

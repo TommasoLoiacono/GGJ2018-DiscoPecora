@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 130343759}
   - component: {fileID: 130343758}
   - component: {fileID: 130343757}
+  - component: {fileID: 130343764}
   - component: {fileID: 130343762}
   - component: {fileID: 130343761}
   - component: {fileID: 130343763}
@@ -229,7 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7753a0716ec0d48805101a28a664ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woolGenetic: {fileID: 11400000, guid: 54db948d03c35e44487419ed4b6c7d21, type: 2}
+  updateNonStop: 0
+  woolGenetic: {fileID: 11400000, guid: 8d90e6dc966ef2b4f858c7e57b073296, type: 2}
   skinGenetic: {fileID: 11400000, guid: ed7984f6f120a2f439ba91f94d4d7859, type: 2}
   hornGenetic: {fileID: 11400000, guid: 55ec374d0dfccd145b480f9d3e4da937, type: 2}
   personalityGenetic: {fileID: 11400000, guid: b89caaf9733378c48a75e29bcc5a8111, type: 2}
@@ -263,6 +265,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boneRoot: {fileID: 0}
   skeletonRenderer: {fileID: 130343757}
+--- !u!114 &130343764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 130343756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69de8231279c1ba4b87e2d7a4b9162f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  anim: {fileID: 130343757}
 --- !u!1 &1405721326
 GameObject:
   m_ObjectHideFlags: 0
