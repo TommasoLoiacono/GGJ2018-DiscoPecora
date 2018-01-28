@@ -53,7 +53,7 @@ public class SheepDisplayer : MonoBehaviour {
             NameText.text = _sheep.nome; 
 
 
-        SheepText.text = "Sex: " + sexString + " - Lana: "+((_sheep.coloreLana.carattereDominante==1)?dominantColor:recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> - Pelle: "+(_sheep.colorePelle.carattereDominante==1?dominantColor:recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> - Carattere: "+(_sheep.carattere.carattereDominante==1?dominantColor:recessiveColor) + _sheep.carattere.valoreCaratteristica+"</color>";
+        SheepText.text = "Sex: " + sexString + " - Lana: "+((_sheep.coloreLana.carattereDominante==1)?dominantColor:recessiveColor) + _sheep.coloreLana.valoreCaratteristica + "</color> - Pelle: "+(_sheep.colorePelle.carattereDominante==1?dominantColor:recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> - Carattere: "+(_sheep.carattere.carattereDominante==1?dominantColor:recessiveColor) + _sheep.carattere.valoreCaratteristica+"</color>";
     }
 
     /// <summary>

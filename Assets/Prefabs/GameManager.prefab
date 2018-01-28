@@ -302,9 +302,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba0e17d0c5efae479505bd0a63f8cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StampoPecora: {fileID: 1250896972281420, guid: 239714f728025b247bbebce6dc1bdd85,
+  StampoPecora: {fileID: 1019428160923226, guid: b107755488861f84a9dd9f6105ac3be5,
     type: 2}
   pecoreInGioco: []
+  DizionarioFenotipo:
+    coloreLana:
+    - chiave: bianco
+      valore: {fileID: 11400000, guid: 54db948d03c35e44487419ed4b6c7d21, type: 2}
+    - chiave: verde
+      valore: {fileID: 11400000, guid: 8d90e6dc966ef2b4f858c7e57b073296, type: 2}
+    - chiave: giallo
+      valore: {fileID: 11400000, guid: 4973ca94ef35aa94cb911dc1fb663c3e, type: 2}
+    colorePelle: []
+    carattere: []
   probabilitaGenerazioneDominante: 0.5
   pecoraSuprema: {fileID: 0}
   pecoraSx: {fileID: 0}
@@ -334,8 +344,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIManagerPrefab: {fileID: 1821255009935660, guid: a905c8191b91ef3438e74bb6bfd135d9,
     type: 2}
+  timeToShutOffHightlight: 10
   UIMng: {fileID: 0}
   DiscoPecora: {fileID: 0}
+  AudioMng: {fileID: 0}
 --- !u!114 &114876981243827970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,3 +359,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb821921406d95544ba630f8b3423a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicsClips: []
+  EffectsClips: []

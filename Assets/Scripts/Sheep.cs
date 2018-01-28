@@ -33,7 +33,7 @@ public class Sheep : MonoBehaviour {
 
     void Update () {
 
-        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 30f) * -1;
+        //GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 30f) * -1;
 
         Vector3 p = new Vector3();
         Camera c = Camera.main;
