@@ -21,14 +21,12 @@ GameObject:
   - component: {fileID: 4980865873062678}
   - component: {fileID: 33307320969010070}
   - component: {fileID: 23177412109065750}
-  - component: {fileID: 114826970979108552}
   - component: {fileID: 114458513962743884}
   - component: {fileID: 114596743490398634}
   - component: {fileID: 114321728449813416}
-  - component: {fileID: 114820925359574044}
   - component: {fileID: 61245039004932648}
   - component: {fileID: 114126527499972094}
-  - component: {fileID: 95679111401585828}
+  - component: {fileID: 114076280832339502}
   m_Layer: 0
   m_Name: AnimSheepSemiDef
   m_TagString: Untagged
@@ -43,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019428160923226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.62, y: -2.551, z: 0}
+  m_LocalPosition: {x: -4.283787, y: -1.2003942, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +61,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c139f973e215d07479f5342c32bd627d, type: 2}
+  - {fileID: 2100000, guid: 0c6ddfd2e0658e44e8e99459f9d727fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,23 +113,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.625149, y: 7.1658187}
   m_EdgeRadius: 0
---- !u!95 &95679111401585828
-Animator:
-  serializedVersion: 3
+--- !u!114 &114076280832339502
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019428160923226}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c771675749b7b3b4bbcbc0ef50910ba1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: 05cb7b3afcfaa52469a0dfc5b46d47fa, type: 2}
+  initialSkinName: Sheep
+  initialFlipX: 0
+  initialFlipY: 0
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  addNormals: 0
+  calculateTangents: 0
+  logErrors: 0
+  disableRenderingOnOverride: 1
+  _animationName: 
+  loop: 1
+  timeScale: 1
 --- !u!114 &114126527499972094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +158,9 @@ MonoBehaviour:
   inertiaDragAmount: 0.5
   speed: 1
   timeBetweenMovments: 4
+  _underInertia: 0
+  dragging: 0
+  CR_running: 0
 --- !u!114 &114321728449813416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,8 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  anim: {fileID: 114826970979108552}
-  selectedDance: default-dance
+  anim: {fileID: 114076280832339502}
 --- !u!114 &114596743490398634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -194,46 +207,3 @@ MonoBehaviour:
   colorePelle: {fileID: 0}
   coloreLana: {fileID: 0}
   carattere: {fileID: 0}
---- !u!114 &114820925359574044
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019428160923226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f726fb798ad621458c431cb9966d91d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneRoot: {fileID: 0}
-  skeletonRenderer: {fileID: 114826970979108552}
---- !u!114 &114826970979108552
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019428160923226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: ef7cd934bc36f8147b4b7be348031e27, type: 2}
-  initialSkinName: Sheep
-  initialFlipX: 0
-  initialFlipY: 0
-  separatorSlotNames: []
-  zSpacing: 0
-  useClipping: 1
-  immutableTriangles: 0
-  pmaVertexColors: 1
-  clearStateOnDisable: 0
-  tintBlack: 0
-  singleSubmesh: 0
-  addNormals: 0
-  calculateTangents: 0
-  logErrors: 0
-  disableRenderingOnOverride: 1
-  _animationName: dog-dance
-  loop: 1
-  timeScale: 1

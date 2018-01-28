@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour {
 
     private void Update()
     {
-        Debug.Log(as_soundtrack1.time);
+      //  Debug.Log(as_soundtrack1.time);
 
 
         if ((as_soundtrack1.isPlaying || as_soundtrack2.isPlaying))

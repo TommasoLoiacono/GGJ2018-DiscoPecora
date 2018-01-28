@@ -12,6 +12,8 @@ public class Sheep : MonoBehaviour {
     public float speed = 1;
     public int timeBetweenMovments = 4;
 
+    public DiscoPecoraGame DiscoPecora;
+    //  public DiscoPecoraGame
     public bool _underInertia = false;
     public bool dragging = false;
     private float _time = 0f;
@@ -136,8 +138,13 @@ public class Sheep : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(1))
         {
+            DiscoPecora.pecoraDx = GetComponent<Pecora>();
+            print("FANCULO " + DiscoPecora.pecoraDx.sesso);
             GameManager.I.UIMng.gameplayCtrl.ShowSheepDatas(GetComponent<Pecora>(), false);
-            GameManager.I.DiscoPecora.pecoraDx = GetComponent<Pecora>();
+
+            DiscoPecora.fDx.transform.parent = DiscoPecora.pecoraDx.transform;
+
+            GameManager.I.DiscoPecora.fDx.transform.localPosition = new Vector3(0.5f, 8, 0);
             GameManager.I.UIMng.secondSheepOff.SetActive(false);
             GameManager.I.StopCoroutine("ShutOffDx");
             GameManager.I.StartCoroutine("ShutOffDx");
@@ -146,7 +153,9 @@ public class Sheep : MonoBehaviour {
 
     void OnMouseDown()
     {
-        GameManager.I.DiscoPecora.pecoraSx = GetComponent<Pecora>();
+        DiscoPecora.pecoraSx = GetComponent<Pecora>();
+        DiscoPecora.fSx.transform.parent = DiscoPecora.pecoraSx.transform;
+       DiscoPecora.fSx.transform.localPosition = new Vector3(0.5f, 8, 0);
         _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
         _underInertia = false;
@@ -163,9 +172,9 @@ public class Sheep : MonoBehaviour {
 
     void OnMouseDrag()
     {
-        if (timer <= 0)
+        if (timer <= 0 || true)
         {
-            GameManager.I.DiscoPecora.pecoraSx = null;
+        //    GameManager.I.DiscoPecora.pecoraSx = null;
             Vector3 _prevPosition = _curPosition;
             _curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
             _curPosition = Camera.main.ScreenToWorldPoint(_curScreenPoint) + _offset;

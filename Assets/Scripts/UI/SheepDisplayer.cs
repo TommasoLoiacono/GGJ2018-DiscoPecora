@@ -54,9 +54,9 @@ public class SheepDisplayer : MonoBehaviour {
 
 
         if (!_isGoalSheep)
-            SheepText.text = "Sex: " + sexString + " \nLana: " + ((_sheep.coloreLana.carattereDominante == 1) ? dominantColor : recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> - Pelle: " + (_sheep.colorePelle.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> \nCarattere: " + (_sheep.carattere.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.carattere.valoreCaratteristica + "</color>"; 
+            SheepText.text = "Sex: " + sexString + " \nLana: " + ((_sheep.coloreLana.carattereDominante == 1) ? dominantColor : recessiveColor) + _sheep.coloreLana.valoreCaratteristica + "</color> - Pelle: " + (_sheep.colorePelle.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> \nCarattere: " + (_sheep.carattere.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.carattere.valoreCaratteristica + "</color>"; 
         else
-            SheepText.text =" \nLana: " + ((_sheep.coloreLana.carattereDominante == 1) ? dominantColor : recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> \n Pelle: " + (_sheep.colorePelle.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> \nCarattere: " + (_sheep.carattere.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.carattere.valoreCaratteristica + "</color>";
+            SheepText.text =" \nLana: " + ((_sheep.coloreLana.carattereDominante == 1) ? dominantColor : recessiveColor) + _sheep.coloreLana.valoreCaratteristica + "</color> \nPelle: " + (_sheep.colorePelle.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.colorePelle.valoreCaratteristica + "</color> \nCarattere: " + (_sheep.carattere.carattereDominante == 1 ? dominantColor : recessiveColor) + _sheep.carattere.valoreCaratteristica + "</color>";
 
     }
 

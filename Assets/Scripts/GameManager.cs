@@ -11,10 +11,9 @@ public class GameManager : MonoBehaviour {
 
     public int timeToShutOffHightlight = 10;
 
+    public DiscoPecoraGame DiscoPecora;
     [HideInInspector]
     public UIManager UIMng;
-    [HideInInspector]
-    public DiscoPecoraGame DiscoPecora;
     [HideInInspector]
     public AudioManager AudioMng;
 
@@ -85,7 +84,10 @@ public class GameManager : MonoBehaviour {
         if (CurrentState == FlowState.Gameplay)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-                DiscoPecora.Accoppia();
+            {
+                print("ACCOPPIOOOOOO");
+                DiscoPecora.Accoppia(DiscoPecora.pecoraSx,DiscoPecora.pecoraDx);
+            }
             if (Input.GetKeyDown(KeyCode.Escape))
                 ChangeState(FlowState.Pause); 
         }

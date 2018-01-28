@@ -46,16 +46,12 @@ public class GameplayPanelController : MonoBehaviour {
         if (_isLeftClick)
         {
             _sheepDisplayers[0].SetText(_pecora);
-            if (!UIMng.SpotLight1.isActiveAndEnabled)
-                UIMng.SpotLight1.gameObject.SetActive(true);
-            UIMng.SpotLight1.MoveSpotLightToPosition(_pecora);
+         //   UIMng.SpotLight1.MoveSpotLightToPosition(_pecora);
         }
         else
         {
             _sheepDisplayers[1].SetText(_pecora);
-            if (!UIMng.SpotLight2.isActiveAndEnabled)
-                UIMng.SpotLight2.gameObject.SetActive(true);
-            UIMng.SpotLight2.MoveSpotLightToPosition(_pecora);
+           // UIMng.SpotLight2.MoveSpotLightToPosition(_pecora);
 
         }
     }

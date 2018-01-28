@@ -33,22 +33,22 @@ public class UIManager : MonoBehaviour {
 
     public void ActivateSpotLight1()
     {
-        SpotLight1.gameObject.SetActive(true);
+     //   SpotLight1.gameObject.SetActive(true);
     }
 
     public void DeactivateSpotLight1()
     {
-        SpotLight1.gameObject.SetActive(false); 
+      //  SpotLight1.gameObject.SetActive(false); 
     }
 
     public void ActivateSpotLight2()
     {
-        SpotLight2.gameObject.SetActive(true);
+     //   SpotLight2.gameObject.SetActive(true);
     }
 
     public void DeactivateSpotLight2()
     {
-        SpotLight2.gameObject.SetActive(false);
+      ///  SpotLight2.gameObject.SetActive(false);
     }
 
     public  void MenuActions()

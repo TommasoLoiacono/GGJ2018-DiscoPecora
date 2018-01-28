@@ -6,6 +6,7 @@ using Spine.Unity;
 
 public class SpineFSM : MonoBehaviour
 {
+    string ultimoStato;
     GameObject sheep;
     [SerializeField]
     SpineAnimStates currentState;
@@ -34,7 +35,7 @@ public class SpineFSM : MonoBehaviour
         }
         else
         {
-            if (gameObject.GetComponent<Sheep>().CR_running)
+            if (gameObject.GetComponent<Sheep>().CR_running || true)
             {
                 // currentState = SpineAnimStates.Walking;
 
@@ -95,7 +96,15 @@ public class SpineFSM : MonoBehaviour
                 }
             }
 
+        }
+        if (ultimoStato == null)
+        {
 
+            ultimoStato = currentState.ToString();
+            anim.AnimationState.SetAnimation(0, currentState.ToString(), true);
+        }
+        if(currentState.ToString() != ultimoStato) { 
+        anim.AnimationState.SetAnimation(0, currentState.ToString(), true);
         }
     }
 

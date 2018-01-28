@@ -17,6 +17,8 @@ public class DiscoPecoraGame : MonoBehaviour {
     public Pecora pecoraSuprema = new Pecora();
     public Pecora pecoraSx;
     public Pecora pecoraDx;
+    public GameObject fSx;
+    public GameObject fDx;
 
     public int _points;
     public int Points {
@@ -84,7 +86,10 @@ public class DiscoPecoraGame : MonoBehaviour {
                         }
                         else
                         {
-                            pecora.GetComponent<Animator>().SetBool("Dead",true);
+                                // pecora.GetComponent<Animator>().SetBool("Dead",true);
+                                pecora.transform.DetachChildren();
+                               // GameManager.I.DiscoPecora.fDx.transform.localPosition = new Vector3(0.5f, 8, 0);
+                                Destroy(pecora);
                         }
                     }
                 }
@@ -144,18 +149,20 @@ public class DiscoPecoraGame : MonoBehaviour {
     }
 
 
-    public void Accoppia()
+    public void Accoppia( Pecora a, Pecora b)
     {
-        if (pecoraSx != null && pecoraDx != null)
+        if (a != null && b != null)
         {
-            if (pecoraSx.sesso == pecoraDx.sesso || pecoraSx.gameObject.GetInstanceID() == pecoraDx.gameObject.GetInstanceID())
+            print("NON NULL");
+            if (a.sesso == b.sesso )
             {
+                print("GAY");
                 // GAYYYYYYYYYYYYYYYYYYYYYYYYYYYY
                 // Oppure è una sega
             }
             else
             {
-                CreaPecora(AccoppiamentoTeorico(pecoraSx, pecoraDx), Vector3.zero);
+                CreaPecora(AccoppiamentoTeorico(a, b), Vector3.zero);
             } 
         }
     }
@@ -184,11 +191,13 @@ public class DiscoPecoraGame : MonoBehaviour {
 
     public void CreaPecora(Pecora p, Vector3 t)
     {
+        print("CREOOOOOH");
         GameObject nuovaPecora = Instantiate(StampoPecora, t, Quaternion.identity, transform);
         pecoreInGioco.Add(nuovaPecora);
         nuovaPecora.GetComponent<Pecora>().InstanziaPecora(p.eta, p.sesso,  p.colorePelle,  p.coloreLana, p.carattere, p.nome);
         JohnSheepCustomize(nuovaPecora);
         ControllaSeHaiPecoraSuprema(nuovaPecora.GetComponent<Pecora>());
+        nuovaPecora.GetComponent<Sheep>().DiscoPecora = this;
        
 
     }
