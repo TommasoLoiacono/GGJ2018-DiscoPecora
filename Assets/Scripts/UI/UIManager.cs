@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour {
     [HideInInspector]
     public MainMenuController mainMenuCtrl;
 
+    public GameObject CreditsPanel; 
+
     public Image TitlePanelBackGround;
     public Image TitlePanel;
     public SpotLightController SpotLight1;
@@ -54,6 +56,17 @@ public class UIManager : MonoBehaviour {
         gameplayCtrl.gameObject.SetActive(false);
         mainMenuCtrl.gameObject.SetActive(true);
         SetPausaPanelStatus(false);
+    }
+
+
+    public void ActivateCreditsPanel()
+    {
+        CreditsPanel.gameObject.SetActive(true);
+    }
+
+    public void DeactivateCreditsPanel()
+    {
+        CreditsPanel.gameObject.SetActive(false);
     }
 
     public void GameplayActions()
