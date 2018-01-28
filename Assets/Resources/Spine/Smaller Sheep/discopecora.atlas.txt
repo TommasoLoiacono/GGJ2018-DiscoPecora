@@ -1,0 +1,363 @@
+
+discopecora.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bandana
+  rotate: false
+  xy: 2, 3
+  size: 105, 47
+  orig: 105, 47
+  offset: 0, 0
+  index: -1
+belly-button-dog
+  rotate: false
+  xy: 302, 46
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+belt-tamarro
+  rotate: false
+  xy: 589, 170
+  size: 103, 31
+  orig: 103, 31
+  offset: 0, 0
+  index: -1
+belt-tamarro-pelo
+  rotate: true
+  xy: 547, 63
+  size: 62, 31
+  orig: 62, 31
+  offset: 0, 0
+  index: -1
+body-dog
+  rotate: false
+  xy: 116, 54
+  size: 90, 200
+  orig: 90, 200
+  offset: 0, 0
+  index: -1
+body-sheep
+  rotate: false
+  xy: 2, 52
+  size: 112, 202
+  orig: 112, 202
+  offset: 0, 0
+  index: -1
+collana-hippie
+  rotate: true
+  xy: 423, 79
+  size: 68, 55
+  orig: 68, 55
+  offset: 0, 0
+  index: -1
+collare-cane
+  rotate: false
+  xy: 701, 209
+  size: 105, 45
+  orig: 105, 45
+  offset: 0, 0
+  index: -1
+collare-punk
+  rotate: false
+  xy: 208, 77
+  size: 124, 60
+  orig: 124, 60
+  offset: 0, 0
+  index: -1
+cravatta
+  rotate: true
+  xy: 808, 198
+  size: 56, 94
+  orig: 56, 94
+  offset: 0, 0
+  index: -1
+dog-ear
+  rotate: true
+  xy: 412, 20
+  size: 57, 66
+  orig: 57, 66
+  offset: 0, 0
+  index: -1
+dog-marks
+  rotate: true
+  xy: 589, 122
+  size: 13, 66
+  orig: 13, 66
+  offset: 0, 0
+  index: -1
+dog-paw
+  rotate: true
+  xy: 523, 7
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+dog-tail
+  rotate: true
+  xy: 340, 91
+  size: 56, 81
+  orig: 56, 81
+  offset: 0, 0
+  index: -1
+dog-whiskers
+  rotate: true
+  xy: 629, 72
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: -1
+ear
+  rotate: false
+  xy: 655, 140
+  size: 50, 28
+  orig: 50, 28
+  offset: 0, 0
+  index: -1
+earring
+  rotate: true
+  xy: 701, 180
+  size: 27, 74
+  orig: 27, 74
+  offset: 0, 0
+  index: -1
+earring2
+  rotate: true
+  xy: 538, 26
+  size: 35, 39
+  orig: 35, 39
+  offset: 0, 0
+  index: -1
+earring3
+  rotate: false
+  xy: 989, 207
+  size: 33, 47
+  orig: 33, 47
+  offset: 0, 0
+  index: -1
+elegant-shoes
+  rotate: true
+  xy: 302, 60
+  size: 15, 30
+  orig: 15, 30
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 480, 2
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: -1
+eye-base
+  rotate: false
+  xy: 777, 176
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1
+eye-closed
+  rotate: false
+  xy: 989, 196
+  size: 21, 9
+  orig: 21, 9
+  offset: 0, 0
+  index: -1
+eye-female
+  rotate: true
+  xy: 846, 180
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+flower
+  rotate: false
+  xy: 580, 76
+  size: 47, 44
+  orig: 47, 44
+  offset: 0, 0
+  index: -1
+good-boi
+  rotate: false
+  xy: 208, 45
+  size: 92, 30
+  orig: 92, 30
+  offset: 0, 0
+  index: -1
+head-sheep
+  rotate: false
+  xy: 208, 139
+  size: 130, 115
+  orig: 130, 115
+  offset: 0, 0
+  index: -1
+headphones
+  rotate: false
+  xy: 340, 171
+  size: 145, 83
+  orig: 145, 83
+  offset: 0, 0
+  index: -1
+heels
+  rotate: true
+  xy: 500, 6
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+horn1
+  rotate: true
+  xy: 334, 37
+  size: 52, 76
+  orig: 52, 76
+  offset: 0, 0
+  index: -1
+horn2
+  rotate: false
+  xy: 480, 69
+  size: 65, 60
+  orig: 65, 60
+  offset: 0, 0
+  index: -1
+horn3
+  rotate: true
+  xy: 487, 176
+  size: 78, 100
+  orig: 78, 100
+  offset: 0, 0
+  index: -1
+irokese
+  rotate: true
+  xy: 589, 203
+  size: 51, 110
+  orig: 51, 110
+  offset: 0, 0
+  index: -1
+leg-up-sheep
+  rotate: true
+  xy: 589, 137
+  size: 31, 64
+  orig: 31, 64
+  offset: 0, 0
+  index: -1
+limb
+  rotate: true
+  xy: 340, 149
+  size: 20, 134
+  orig: 20, 134
+  offset: 0, 0
+  index: -1
+mouth-piercing
+  rotate: true
+  xy: 869, 181
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+muso
+  rotate: false
+  xy: 663, 93
+  size: 32, 45
+  orig: 32, 45
+  offset: 0, 0
+  index: -1
+muso-pecora
+  rotate: true
+  xy: 1012, 190
+  size: 15, 10
+  orig: 15, 10
+  offset: 0, 0
+  index: -1
+nose-dog
+  rotate: false
+  xy: 580, 63
+  size: 17, 11
+  orig: 17, 11
+  offset: 0, 0
+  index: -1
+occhiali-hippie
+  rotate: false
+  xy: 109, 2
+  size: 84, 41
+  orig: 84, 41
+  offset: 0, 0
+  index: -1
+sheep-arm-up
+  rotate: true
+  xy: 904, 196
+  size: 58, 83
+  orig: 58, 83
+  offset: 0, 0
+  index: -1
+sheep-face
+  rotate: false
+  xy: 487, 131
+  size: 71, 43
+  orig: 71, 43
+  offset: 0, 0
+  index: -1
+sheep-paw
+  rotate: false
+  xy: 889, 181
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+sheep-paw2
+  rotate: false
+  xy: 579, 45
+  size: 12, 16
+  orig: 12, 16
+  offset: 0, 0
+  index: -1
+sigaretta
+  rotate: false
+  xy: 285, 18
+  size: 11, 25
+  orig: 11, 25
+  offset: 0, 0
+  index: -1
+sneakers
+  rotate: false
+  xy: 663, 73
+  size: 24, 18
+  orig: 24, 18
+  offset: 0, 0
+  index: -1
+stivale-1
+  rotate: true
+  xy: 707, 151
+  size: 27, 60
+  orig: 27, 60
+  offset: 0, 0
+  index: -1
+stivale2
+  rotate: false
+  xy: 560, 127
+  size: 27, 47
+  orig: 27, 47
+  offset: 0, 0
+  index: -1
+tail-sheep
+  rotate: true
+  xy: 480, 24
+  size: 43, 56
+  orig: 43, 56
+  offset: 0, 0
+  index: -1
+tamarro-glasses
+  rotate: false
+  xy: 195, 8
+  size: 88, 35
+  orig: 88, 35
+  offset: 0, 0
+  index: -1
+tongue
+  rotate: true
+  xy: 807, 179
+  size: 17, 37
+  orig: 17, 37
+  offset: 0, 0
+  index: -1
