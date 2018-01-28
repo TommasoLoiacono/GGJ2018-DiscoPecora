@@ -48,8 +48,9 @@ public class DiscoPecoraGame : MonoBehaviour {
 
     IEnumerator InvecchiaPecore()
     {
-        while (giocoAttivo)
+        while (true)
         {
+            if (giocoAttivo) { 
             yield return new WaitForSeconds(tempoPerInvecchiarePecore);
             print("invecchio");
             foreach(GameObject pecora in pecoreInGioco)
@@ -77,12 +78,14 @@ public class DiscoPecoraGame : MonoBehaviour {
             }
              pecoreInGioco.RemoveAll(item => item.GetComponent<Pecora>().eta >= etaMorte);
         }
-        
+        }
+
     }
 
     IEnumerator GeneraPecore()
     {
-        while (giocoAttivo) { 
+        while (true) {
+            if (giocoAttivo) { 
         yield return new WaitForSeconds(secondiPerGenerarePecora);
 
             if (pecoreInGioco.Count <= numeroMassimoPecore)
@@ -90,6 +93,7 @@ public class DiscoPecoraGame : MonoBehaviour {
                 Vector3 spawnPos = new Vector3(Random.Range(-9, 9), Random.Range(-2, 4), 0f);
                 CreaPecora(RandomizzaPecora(), spawnPos);
             }
+        }
         }
     }
 
@@ -169,10 +173,22 @@ public class DiscoPecoraGame : MonoBehaviour {
         GameObject nuovaPecora = Instantiate(StampoPecora, t, Quaternion.identity, transform);
         pecoreInGioco.Add(nuovaPecora);
         nuovaPecora.GetComponent<Pecora>().InstanziaPecora(p.eta, p.sesso,  p.colorePelle,  p.colorePelle, p.carattere, p.nome);
-
+        JohnSheepCustomize(nuovaPecora);
         ControllaSeHaiPecoraSuprema(nuovaPecora.GetComponent<Pecora>());
+       
 
+    }
 
+    //Hi John, this is your funcion. You will get an instanced white sheep, as gameobject.
+    // You should, at the end of this function, to give her the right color of skin, color of wool and the right animator
+    //  sheep.GetComponent<Pecora>().coloreLana.valoreCaratteristica is the color of the wool
+    //  sheep.GetComponent<Pecora>().colorePelle.valoreCaratteristica is the color of the skin
+    //  Both values are string.
+    // You can use either italian name or english name, in case we will figure out how to translate properly
+    // The prefab of the sheep is called sheep in the prefab folder 
+    public void JohnSheepCustomize(GameObject sheep)
+    {
+       
     }
 
     public Pecora RandomizzaPecora()
