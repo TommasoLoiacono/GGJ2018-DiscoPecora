@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &502392576
+--- !u!1001 &823414770
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.9954824
+      value: -1.8319358
       objectReference: {fileID: 0}
     - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.67
+      value: -1.8587446
       objectReference: {fileID: 0}
     - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -156,11 +156,6 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114458513962743884, guid: b107755488861f84a9dd9f6105ac3be5,
-        type: 2}
-      propertyPath: currentState
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
@@ -603,5 +598,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
