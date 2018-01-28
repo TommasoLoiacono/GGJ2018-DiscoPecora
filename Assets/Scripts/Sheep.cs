@@ -33,7 +33,7 @@ public class Sheep : MonoBehaviour {
 
     void Update () {
 
-        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 30f) * -1;
+        //GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 30f) * -1;
 
         Vector3 p = new Vector3();
         Camera c = Camera.main;
@@ -112,18 +112,22 @@ public class Sheep : MonoBehaviour {
     {
         
         CR_running = true;
-        float startT = Time.time;
+        if (!dragging)
+        {
+            float startT = Time.time;
 
-        int x = Random.Range(-9, 9);
-        int y = Random.Range(-2, 4);
-        Vector3 dest = new Vector3(x,y,0f);
-        float journeyLength = Vector3.Distance(startPosition, dest);
-        
-        while (Time.time-startT<_seconds) {
-            transform.position= Vector3.Lerp(startPosition,dest, ((Time.time - startT) * speed)/journeyLength);
-            yield return null;
+            int x = Random.Range(-9, 9);
+            int y = Random.Range(-2, 4);
+            Vector3 dest = new Vector3(x, y, 0f);
+            float journeyLength = Vector3.Distance(startPosition, dest);
+
+            while (Time.time - startT < _seconds)
+            {
+                transform.position = Vector3.Lerp(startPosition, dest, ((Time.time - startT) * speed) / journeyLength);
+                yield return null;
+            }
+            startPosition = transform.position; 
         }
-        startPosition = transform.position;
         CR_running = false;
     }
 
