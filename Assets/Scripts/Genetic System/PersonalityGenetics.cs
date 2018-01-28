@@ -42,7 +42,7 @@ public class PersonalityGenetics : GeneticBase
 
         switch(personality)
         {
-            case PersonalityTypes.alternativo:
+            case PersonalityTypes.Alternative:
                 //little flower on the head, hippie necklace with the symbol of the peace, john lennon glasses
                 
                 if (UnityEngine.Random.Range(1, 100) >= 50)
@@ -53,19 +53,19 @@ public class PersonalityGenetics : GeneticBase
                 anim.skeleton.SetAttachment("head-accessories", "flower");
                 anim.skeleton.SetAttachment("collana-hippie", "collana-hippie");
                 break;
-            case PersonalityTypes.aggressivo:
+            case PersonalityTypes.Aggressive:
                 //cigarette, bandana, boots
 
                 anim.skeleton.SetAttachment("head-accessories", "bandana");
                 anim.skeleton.SetAttachment("sigaretta", "sigaretta");
                 break;
-            case PersonalityTypes.yokel:
+            case PersonalityTypes.Yokel:
                 //air max, glasses with stripes, the belt with the dollar
                 break;
-            case PersonalityTypes.chic:
+            case PersonalityTypes.Chic:
                 //heels / pointy shoes, tie / earrings
                 break;
-            case PersonalityTypes.punkabbestia:
+            case PersonalityTypes.Punk:
                 //necklace with studs, rainbow crest, lip earring
                 break;
         }
@@ -91,9 +91,9 @@ public class PersonalityGenetics : GeneticBase
 
 public enum PersonalityTypes
 {
-    alternativo,
-    aggressivo,
-    yokel,
-    chic,
-    punkabbestia
+    Alternative,
+    Aggressive,
+    Yokel,
+    Chic,
+    Punk
 }

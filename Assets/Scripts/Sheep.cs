@@ -12,8 +12,8 @@ public class Sheep : MonoBehaviour {
     public float speed = 1;
     public int timeBetweenMovments = 4;
 
-    private bool _underInertia = false;
-    private bool dragging = false;
+    public bool _underInertia = false;
+    public bool dragging = false;
     private float _time = 0f;
     private Vector3 startPosition;
     private Vector3 _screenPoint;
@@ -22,7 +22,7 @@ public class Sheep : MonoBehaviour {
     private Vector3 _curPosition;
     private Vector3 _velocity;
     private float startTime;
-    private bool CR_running;
+    public bool CR_running;
 
     private void Start()
     {

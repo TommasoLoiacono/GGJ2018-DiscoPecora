@@ -113,6 +113,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &502392576
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.9954824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -8.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980865873062678, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 33307320969010070, guid: b107755488861f84a9dd9f6105ac3be5,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114458513962743884, guid: b107755488861f84a9dd9f6105ac3be5,
+        type: 2}
+      propertyPath: currentState
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b107755488861f84a9dd9f6105ac3be5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1191176214
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +279,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.colorePelle.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4937666986677916, guid: ef5730aab1395d643bfaac0f9300416c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -280,6 +342,39 @@ Prefab:
       propertyPath: minNumberOfSheeps
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.data[3].chiave
+      value: giallo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.data[3].valore
+      value: 
+      objectReference: {fileID: 11400000, guid: 4973ca94ef35aa94cb911dc1fb663c3e,
+        type: 2}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.data[4].chiave
+      value: giallo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.data[4].valore
+      value: 
+      objectReference: {fileID: 11400000, guid: 4973ca94ef35aa94cb911dc1fb663c3e,
+        type: 2}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.data[0].chiave
+      value: White
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.data[0].valore
+      value: 
+      objectReference: {fileID: 11400000, guid: faff47aa5a2136548b4e24acc5491fb4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef5730aab1395d643bfaac0f9300416c, type: 2}
   m_IsPrefabParent: 0
@@ -343,5 +438,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

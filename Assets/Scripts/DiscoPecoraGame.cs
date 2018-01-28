@@ -11,8 +11,8 @@ public class DiscoPecoraGame : MonoBehaviour {
     public ArrayList listaNomiMaschili = new ArrayList(new string[] { "Mario", "Luigi", "Bowser", "Kangaroo", "Teddy", "Vladimir", "Matteo", "Silvio", "Donald", "Zack", "Terkelton", "Ludwig", "Link", "Bernie", "Luke", "Todd", "Adamo", "Matthew", "Pier Luca", "Goffredo", "Francesco", "Sven", "Brucolo", "Rudolf", "Adolf", "Aldwin", "Jonnie", "John", "Ayeye", "Alvin", "Piero", "Ashby", "Piero", "Angelo", "Salvatore", "Yi Yong", "Carlo", "Ittikiom", "Ben J", "Asdrubale", "Annibale", "Attila", "Rollo", "Balto", "Montalbano", "Stefano","ASDF" });
     public ArrayList listaNomiFemminili = new ArrayList(new string[] { "Viola", "Pippa", "Genoveffa", "Gina", "Verdania", "Erika", "Stefania", "Summer", "Jiu Li", "Yuhui Li", "Sibei", "Xun Wang", "Luisa", "Maria", "Maddalena", "Elisabetta", "Eva", "Audrey", "Jennifer", "Armie", "Rachel", "Monica", "Phoebe", "Piper", "Lara", "Prue", "Pamela", "Samantha", "Scarlett", "Lorde", "Andrea", "Giovanna", "Rosy", "Adriana", "Lucia", "Licia", "Zelda", "Peach", "Kendall" });
     public ArrayList aggettiviColorePelle = new ArrayList(new string[] { "Pink", "Black", "Yellow" });
-    public ArrayList aggettiviColoreLana = new ArrayList(new string[] { "bianco", "rosso", "verde" });
-    public ArrayList aggettiviCarattere = new ArrayList(new string[] { "blu", "rosso", "giallo" });
+    public ArrayList aggettiviColoreLana = new ArrayList(new string[] {"White", "Orange","Blue","Green","Red" });
+    public ArrayList aggettiviCarattere = new ArrayList(new string[] { "Alternative", "Aggressive", "Punk", "Chic", "Yokel" }); 
     public float probabilitaGenerazioneDominante=0.5f;
     public Pecora pecoraSuprema = new Pecora();
     public Pecora pecoraSx;
