@@ -261,6 +261,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
         type: 2}
+      propertyPath: StampoPecora
+      value: 
+      objectReference: {fileID: 1019428160923226, guid: b107755488861f84a9dd9f6105ac3be5,
+        type: 2}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: DizionarioFenotipo.coloreLana.Array.data[2].chiave
+      value: giallo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
       propertyPath: maxNumberOfSheeps
       value: 30
       objectReference: {fileID: 0}

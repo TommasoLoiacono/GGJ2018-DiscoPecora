@@ -6,11 +6,12 @@ public class DiscoPecoraGame : MonoBehaviour {
 
     public GameObject StampoPecora;
     public List<GameObject> pecoreInGioco = new List<GameObject>(); // Eh già, la lista delle pecore che ci sono in gioco. Fenomenale, lo so.
-                                                            //  public ArrayList aggettiviColorePelle = new ArrayList();
+    [SerializeField]
+    public RecordFenotipo DizionarioFenotipo;
     public ArrayList listaNomiMaschili = new ArrayList(new string[] { "Mario", "Luigi", "Bowser", "Kangaroo", "Teddy", "Vladimir", "Matteo", "Silvio", "Donald", "Zack", "Terkelton", "Ludwig", "Link", "Bernie", "Luke", "Todd", "Adamo", "Matthew", "Pier Luca", "Goffredo", "Francesco", "Sven", "Brucolo", "Rudolf", "Adolf", "Aldwin", "Jonnie", "John", "Ayeye", "Alvin", "Piero", "Ashby", "Piero", "Angelo", "Salvatore", "Yi Yong", "Carlo", "Ittikiom", "Ben J", "Asdrubale", "Annibale", "Attila", "Rollo", "Balto", "Montalbano", "Stefano","ASDF" });
     public ArrayList listaNomiFemminili = new ArrayList(new string[] { "Viola", "Pippa", "Genoveffa", "Gina", "Verdania", "Erika", "Stefania", "Summer", "Jiu Li", "Yuhui Li", "Sibei", "Xun Wang", "Luisa", "Maria", "Maddalena", "Elisabetta", "Eva", "Audrey", "Jennifer", "Armie", "Rachel", "Monica", "Phoebe", "Piper", "Lara", "Prue", "Pamela", "Samantha", "Scarlett", "Lorde", "Andrea", "Giovanna", "Rosy", "Adriana", "Lucia", "Licia", "Zelda", "Peach", "Kendall" });
     public ArrayList aggettiviColorePelle = new ArrayList(new string[] { "Pink", "Black", "Yellow" });
-    public ArrayList aggettiviColoreLana = new ArrayList(new string[] { "blu", "rosso", "giallo" });
+    public ArrayList aggettiviColoreLana = new ArrayList(new string[] { "bianco", "rosso", "verde" });
     public ArrayList aggettiviCarattere = new ArrayList(new string[] { "blu", "rosso", "giallo" });
     public float probabilitaGenerazioneDominante=0.5f;
     public Pecora pecoraSuprema = new Pecora();
@@ -48,10 +49,10 @@ public class DiscoPecoraGame : MonoBehaviour {
     public void Init() {
         pecoraSuprema = RandomizzaPecora();
         GameManager.I.UIMng.gameplayCtrl.SetGoalTabText(pecoraSuprema);
+        giocoAttivo = true;
         StartCoroutine(GeneraPecore());
         StartCoroutine(InvecchiaPecore());
-        Generate();
-        giocoAttivo = true;
+        //Generate();
         //StartCoroutine(Populate());
 
     }
@@ -61,8 +62,8 @@ public class DiscoPecoraGame : MonoBehaviour {
     {
         while (true)
         {
-            if (giocoAttivo) { 
             yield return new WaitForSeconds(tempoPerInvecchiarePecore);
+            if (giocoAttivo) { 
             print("invecchio");
             foreach(GameObject pecora in pecoreInGioco)
             {
@@ -95,9 +96,10 @@ public class DiscoPecoraGame : MonoBehaviour {
 
     IEnumerator GeneraPecore()
     {
-        while (true) {
+        while (true)
+        {
+            yield return new WaitForSeconds(secondiPerGenerarePecora);
             if (giocoAttivo) { 
-        yield return new WaitForSeconds(secondiPerGenerarePecora);
 
             if (pecoreInGioco.Count <= numeroMassimoPecore)
             {
@@ -183,7 +185,7 @@ public class DiscoPecoraGame : MonoBehaviour {
     {
         GameObject nuovaPecora = Instantiate(StampoPecora, t, Quaternion.identity, transform);
         pecoreInGioco.Add(nuovaPecora);
-        nuovaPecora.GetComponent<Pecora>().InstanziaPecora(p.eta, p.sesso,  p.colorePelle,  p.colorePelle, p.carattere, p.nome);
+        nuovaPecora.GetComponent<Pecora>().InstanziaPecora(p.eta, p.sesso,  p.colorePelle,  p.coloreLana, p.carattere, p.nome);
         JohnSheepCustomize(nuovaPecora);
         ControllaSeHaiPecoraSuprema(nuovaPecora.GetComponent<Pecora>());
        
@@ -199,7 +201,26 @@ public class DiscoPecoraGame : MonoBehaviour {
     // The prefab of the sheep is called sheep in the prefab folder 
     public void JohnSheepCustomize(GameObject sheep)
     {
-       
+        RecordData record;
+        record = DizionarioFenotipo.coloreLana.Find(item => item.chiave == sheep.GetComponent<Pecora>().coloreLana.valoreCaratteristica);
+        if (record != null)
+        {
+            sheep.GetComponent<TestColorChange>().woolGenetic = record.valore as WoolGenetics;
+        }
+
+        record = DizionarioFenotipo.colorePelle.Find(item => item.chiave == sheep.GetComponent<Pecora>().colorePelle.valoreCaratteristica);
+        if (record != null)
+        {
+            sheep.GetComponent<TestColorChange>().skinGenetic = record.valore as SkinGenetics;
+        }
+
+        record = DizionarioFenotipo.carattere.Find(item => item.chiave == sheep.GetComponent<Pecora>().carattere.valoreCaratteristica);
+        if (record != null)
+        {
+            sheep.GetComponent<TestColorChange>().personalityGenetic = record.valore as PersonalityGenetics;
+        }
+
+
     }
 
     public Pecora RandomizzaPecora()

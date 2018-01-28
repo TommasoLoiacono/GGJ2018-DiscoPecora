@@ -7,19 +7,19 @@ public class TestColorChange : MonoBehaviour
 {
     [Header("Enable this to have the genetics update non stop")]
     [SerializeField]
-    bool updateNonStop = false;
+    bool updateNonStop = true;
 
     [SerializeField]
-    WoolGenetics woolGenetic;
+   public  WoolGenetics woolGenetic;
 
     [SerializeField]
-    SkinGenetics skinGenetic;
+    public SkinGenetics skinGenetic;
 
     [SerializeField]
-    HornGenetics hornGenetic;
+    public HornGenetics hornGenetic;
 
     [SerializeField]
-    PersonalityGenetics personalityGenetic;
+    public PersonalityGenetics personalityGenetic;
 
 
 

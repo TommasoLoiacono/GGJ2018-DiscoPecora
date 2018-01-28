@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   geneName: Alt Rocker
   geneStr: 0
-  personality: 0
+  personality: 3
   description: Swing your hips

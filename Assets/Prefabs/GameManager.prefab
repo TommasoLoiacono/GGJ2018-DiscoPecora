@@ -305,6 +305,16 @@ MonoBehaviour:
   StampoPecora: {fileID: 1019428160923226, guid: b107755488861f84a9dd9f6105ac3be5,
     type: 2}
   pecoreInGioco: []
+  DizionarioFenotipo:
+    coloreLana:
+    - chiave: bianco
+      valore: {fileID: 11400000, guid: 54db948d03c35e44487419ed4b6c7d21, type: 2}
+    - chiave: verde
+      valore: {fileID: 11400000, guid: 8d90e6dc966ef2b4f858c7e57b073296, type: 2}
+    - chiave: giallo
+      valore: {fileID: 11400000, guid: 4973ca94ef35aa94cb911dc1fb663c3e, type: 2}
+    colorePelle: []
+    carattere: []
   probabilitaGenerazioneDominante: 0.5
   pecoraSuprema: {fileID: 0}
   pecoraSx: {fileID: 0}
