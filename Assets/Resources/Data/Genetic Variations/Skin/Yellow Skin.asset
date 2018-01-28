@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6c81550d7a3fff4e8ac1f7584e88711, type: 3}
-  m_Name: Grey Skin
+  m_Name: Yellow Skin
   m_EditorClassIdentifier: 
-  geneName: Stone Skin
+  geneName: 
   geneStr: 0
-  headcolor: {r: 0.5661765, g: 0.5661765, b: 0.5661765, a: 1}
-  armcolor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
-  legColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
+  headcolor: {r: 1, g: 0.82, b: 0.43382353, a: 1}
+  armcolor: {r: 1, g: 0.81960785, b: 0.43529412, a: 1}
+  legColor: {r: 1, g: 0.81960785, b: 0.43529412, a: 1}
