@@ -650,11 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d24351413e76249bc404ba5bc23290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftDisplayerOpen: {fileID: 21300000, guid: ad20172acc03021488bbebbbae63f1e9, type: 3}
-  RightDisplayerOpen: {fileID: 21300000, guid: 4ffaa2e2a42a89e4f800fdc02c4d931c, type: 3}
-  LeftDisplayerClose: {fileID: 21300000, guid: 8e455c37c1c57c24097e46a0d70fd957, type: 3}
-  RightDisplayerClose: {fileID: 21300000, guid: b989322a388f58546b0cafb8cb451e94,
-    type: 3}
+  GoalTab: {fileID: 114584679063558652}
   CounterText: {fileID: 114585365466309598}
 --- !u!114 &114238244080100180
 MonoBehaviour:
@@ -899,8 +895,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ad20172acc03021488bbebbbae63f1e9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1748,7 +1744,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 708, y: 180}
+  m_SizeDelta: {x: 706, y: 180}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224099198804880426
 RectTransform:
@@ -1781,10 +1777,10 @@ RectTransform:
   m_Father: {fileID: 224192320061495080}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.15}
-  m_AnchorMax: {x: 1, y: 0.605}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 0, y: 30}
+  m_AnchorMin: {x: 0.2564986, y: 0}
+  m_AnchorMax: {x: 0.86700004, y: 1}
+  m_AnchoredPosition: {x: -43.5, y: -37}
+  m_SizeDelta: {x: 275, y: -68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224192320061495080
 RectTransform:
@@ -1804,7 +1800,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 200}
+  m_SizeDelta: {x: 706, y: 180}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224200248184082400
 RectTransform:
@@ -1837,10 +1833,10 @@ RectTransform:
   m_Father: {fileID: 224192320061495080}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 51}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0.024249291, y: 0.105555564}
+  m_AnchorMax: {x: 0.22258358, y: 0.91666675}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224247726415942416
 RectTransform:

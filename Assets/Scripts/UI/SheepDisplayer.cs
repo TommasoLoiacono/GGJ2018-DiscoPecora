@@ -10,37 +10,21 @@ public class SheepDisplayer : MonoBehaviour {
     public Text NameText;
 
 
-    Sprite _imageOn;
-    Sprite _imageOff;
-
-    bool _isUsed;
-    public bool IsUsed
-    {
-        get { return _isUsed; }
-        set { _isUsed = value; }
-    }
+    //Sprite _imageOn;
+    //Sprite _imageOff;
 
     #region API
-    public void Init(Sprite _ImageOn, Sprite _ImageOff)
-    {
-        _imageOn = _ImageOn;
-        _imageOff = _ImageOff;
-    }
-
-    /// <summary>
-    /// Setup the text and the image of the card
-    /// </summary>
-    /// <param name="_struct"></param>
-    public void SetupCard(Pecora _sheep)
-    {
-        SetText(_sheep);
-    }
+    //public void Init(Sprite _ImageOn, Sprite _ImageOff)
+    //{
+    //    _imageOn = _ImageOn;
+    //    _imageOff = _ImageOff;
+    //}
 
     /// <summary>
     /// Set the text displayed in the card
     /// </summary>
     /// <param name="_struct">Structure with all the datas</param>
-    public void SetText(Pecora _sheep)
+    public void SetText(Pecora _sheep, bool _isGoalSheep = false)
     {
         string sexString;
         switch (_sheep.sesso)
@@ -58,7 +42,8 @@ public class SheepDisplayer : MonoBehaviour {
                 sexString = "noSex";
                 break;
         }
-        NameText.text = _sheep.nome;
+        if (!_isGoalSheep)
+            NameText.text = _sheep.nome; 
         SheepText.text = "Sex: " + sexString + " - Lana: " + _sheep.colorePelle.valoreCaratteristica +" - Pelle: " + _sheep.colorePelle.valoreCaratteristica + " - Carattere: " + _sheep.carattere.valoreCaratteristica;
     }
 

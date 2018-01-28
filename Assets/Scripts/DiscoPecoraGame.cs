@@ -37,6 +37,7 @@ public class DiscoPecoraGame : MonoBehaviour {
     // Use this for initialization
     public void Init() {
         pecoraSuprema = RandomizzaPecora();
+        GameManager.I.UIMng.gameplayCtrl.SetGoalTabText(pecoraSuprema);
         StartCoroutine(GeneraPecore());
         StartCoroutine(InvecchiaPecore());
         Generate();
