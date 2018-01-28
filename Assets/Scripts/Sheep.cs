@@ -120,7 +120,6 @@ public class Sheep : MonoBehaviour {
         float journeyLength = Vector3.Distance(startPosition, dest);
         
         while (Time.time-startT<_seconds) {
-            Debug.Log(dest);
             transform.position= Vector3.Lerp(startPosition,dest, ((Time.time - startT) * speed)/journeyLength);
             yield return null;
         }
@@ -172,6 +171,7 @@ public class Sheep : MonoBehaviour {
     {
         dragging = false;
         timer = .2f;
+        startPosition = transform.position;
     }
 
     public void Die()

@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class SpotLightController : MonoBehaviour {
 
-    public void MoveSpotLightToPosition(Vector3 _position)
+    Pecora target;
+
+    public void MoveSpotLightToPosition(Pecora _pecoraToFollow)
     {
-        Vector3 tempobjPos = Camera.main.WorldToScreenPoint(_position); // la posizione dell'oggetto da seguire, sul canvasa.
-        transform.position = tempobjPos;
+        target = _pecoraToFollow;
+    }
+
+    private void Update()
+    {
+        if(target != null)
+        {
+            Vector3 tempobjPos = Camera.main.WorldToScreenPoint(target.transform.position); // la posizione dell'oggetto da seguire, sul canvasa.
+            transform.position = tempobjPos;
+        }
     }
 }
