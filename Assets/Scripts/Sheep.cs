@@ -133,6 +133,9 @@ public class Sheep : MonoBehaviour {
         {
             GameManager.I.UIMng.gameplayCtrl.ShowSheepDatas(GetComponent<Pecora>(), false);
             GameManager.I.DiscoPecora.pecoraDx = GetComponent<Pecora>();
+            GameManager.I.UIMng.secondSheepOff.SetActive(false);
+            GameManager.I.StopCoroutine("ShutOffDx");
+            GameManager.I.StartCoroutine("ShutOffDx");
         }
     }
 
@@ -143,7 +146,11 @@ public class Sheep : MonoBehaviour {
         _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
         _underInertia = false;
         GameManager.I.UIMng.gameplayCtrl.ShowSheepDatas(GetComponent<Pecora>(), true);
-        GameManager.I.UIMng.ActivateSpotLight();
+        GameManager.I.UIMng.ActivateSpotLight1();
+        GameManager.I.UIMng.firstSheepOff.SetActive(false);
+        GameManager.I.StopCoroutine("ShutOffSx");
+        GameManager.I.StartCoroutine("ShutOffSx");
+
 
     }
 
@@ -159,7 +166,7 @@ public class Sheep : MonoBehaviour {
             _curPosition = Camera.main.ScreenToWorldPoint(_curScreenPoint) + _offset;
             _velocity = _curPosition - _prevPosition;
             transform.position = _curPosition;
-            GameManager.I.UIMng.DeactivateSpotLight();
+            GameManager.I.UIMng.DeactivateSpotLight1();
             dragging = true;
             _underInertia = true;
             return;

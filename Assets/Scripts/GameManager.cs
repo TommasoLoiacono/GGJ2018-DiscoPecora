@@ -9,12 +9,15 @@ public class GameManager : MonoBehaviour {
 
     public GameObject UIManagerPrefab;
 
+    public int timeToShutOffHightlight = 10;
+
     [HideInInspector]
     public UIManager UIMng;
     [HideInInspector]
     public DiscoPecoraGame DiscoPecora;
     [HideInInspector]
     public AudioManager AudioMng;
+
 
     #region GameFlow StateMachine
     private FlowState _currentState;
@@ -106,6 +109,20 @@ public class GameManager : MonoBehaviour {
             });
         });
 
+    }
+    IEnumerator ShutOffDx()
+    {
+        yield return new WaitForSeconds(timeToShutOffHightlight);
+        UIMng.secondSheepOff.SetActive(true);
+        UIMng.DeactivateSpotLight2();
+
+
+    }
+    IEnumerator ShutOffSx()
+    {
+        yield return new WaitForSeconds(timeToShutOffHightlight);
+        UIMng.firstSheepOff.SetActive(true);
+        UIMng.DeactivateSpotLight1();
     }
 
     /// <summary>

@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour {
     public Image TitlePanel;
     public SpotLightController SpotLight1;
     public SpotLightController SpotLight2;
+    public GameObject firstSheepOff;
+    public GameObject secondSheepOff;
+
 
     public void Init()
     {
@@ -21,14 +24,24 @@ public class UIManager : MonoBehaviour {
         gameplayCtrl.Init(this);
     }
 
-    public void ActivateSpotLight()
+    public void ActivateSpotLight1()
     {
         SpotLight1.gameObject.SetActive(true);
     }
 
-    public void DeactivateSpotLight()
+    public void DeactivateSpotLight1()
     {
         SpotLight1.gameObject.SetActive(false); 
+    }
+
+    public void ActivateSpotLight2()
+    {
+        SpotLight2.gameObject.SetActive(true);
+    }
+
+    public void DeactivateSpotLight2()
+    {
+        SpotLight2.gameObject.SetActive(false);
     }
 
     public  void MenuActions()
