@@ -16,33 +16,72 @@ public class WoolGenetics : GeneticBase
 
     [Header("Head")]
     [SerializeField]
-    Color32 headcolor;
+    Color headcolor;
 
     [Header("Body")]
     [SerializeField]
-    Color32 bodycolor;
+    Color bodycolor;
 
     [Header("Arms")]
     [SerializeField]
     bool armActive;
     [SerializeField]
-    Color32 armcolor;
+    Color armcolor;
 
     [Header("Legs")]
     [SerializeField]
     bool legActive;
     [SerializeField]
-    Color32 legColor;
+    Color legColor;
 
     [Header("Tail")]
     [SerializeField]
-    Color32 tailColor;
+    Color tailColor;
 
     #endregion
 
 
-    public override void SetGenetic(Pecora pecora)
+    public override void SetGenetic(GameObject sheepGO)
     {
+
+        SkeletonAnimation anim = sheepGO.GetComponent<SkeletonAnimation>();
+        
+       
+        //Right Arm
+        anim.Skeleton.FindSlot("sheep-arm-up2").SetColor(armcolor);
+
+        //Left Arm
+        anim.Skeleton.FindSlot("sheep-arm-up").SetColor(armcolor);
+
+        //Left Leg
+        anim.Skeleton.FindSlot("leg-up-sheep4").SetColor(legColor);
+
+        //Right Leg
+        anim.Skeleton.FindSlot("leg-up-sheep").SetColor(legColor);
+
+        //Body
+        anim.Skeleton.FindSlot("body").SetColor(bodycolor);
+
+        //Head
+        anim.Skeleton.FindSlot("head-sheep").SetColor(headcolor);
+
+        //Tail
+        anim.skeleton.FindSlot("tail").SetColor(tailColor);
+
+        //Sets the arm / leg alpha to 0 so the slot will not show
+        //There is a better way however to save time im not looking it up for now
+        if (!armActive)
+        {
+            anim.skeleton.FindSlot("sheep-arm-up2").SetColor(new Color(0, 0, 0, 0));
+            anim.skeleton.FindSlot("sheep-arm-up").SetColor(new Color(0, 0, 0, 0));
+        }
+
+        if (!legActive)
+        {
+            anim.skeleton.FindSlot("leg-up-sheep4").SetColor(new Color(0, 0, 0, 0));
+            anim.skeleton.FindSlot("leg-up-sheep").SetColor(new Color(0, 0, 0, 0));
+        }
+
 
     }
 

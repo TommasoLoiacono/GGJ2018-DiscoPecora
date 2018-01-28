@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spine.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,22 +13,48 @@ public class SkinGenetics : GeneticBase
 
     [Header("Face")]
     [SerializeField]
-    Color32 headcolor;
+    Color headcolor;
 
     [Header("Arms")]
     [SerializeField]
-    Color32 armcolor;
+    Color armcolor;
 
     [Header("Legs")]
     [SerializeField]
-    Color32 legColor;
+    Color legColor;
 
     #endregion
 
 
-    public override void SetGenetic(Pecora pecora)
+    public override void SetGenetic(GameObject sheepGO)
     {
-        throw new NotImplementedException();
+        SkeletonAnimation anim = sheepGO.GetComponent<SkeletonAnimation>();
+
+
+        //Left Ear
+        anim.Skeleton.FindSlot("sheep-face").SetColor(headcolor);
+
+        //Left Ear
+        anim.Skeleton.FindSlot("ear").SetColor(headcolor);
+
+        //Right Ear
+        anim.Skeleton.FindSlot("ear2").SetColor(headcolor);
+
+        //muzzle
+        anim.Skeleton.FindSlot("muso").SetColor(headcolor);
+
+        //Left Arm
+        anim.Skeleton.FindSlot("limb3").SetColor(armcolor);
+
+        //Right Arm
+        anim.Skeleton.FindSlot("limb2").SetColor(armcolor);
+
+        //Left Leg
+        anim.Skeleton.FindSlot("limb4").SetColor(legColor);
+
+        //Right Leg
+        anim.skeleton.FindSlot("limb").SetColor(legColor);
+        
     }
 
 }

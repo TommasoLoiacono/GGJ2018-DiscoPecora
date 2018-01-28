@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
   m_Name: discopecora_Atlas
   m_EditorClassIdentifier: 
-  atlasFile: {fileID: 4900000, guid: b720869b7c7a4eb4ab6b7f7aa5180801, type: 3}
+  atlasFile: {fileID: 4900000, guid: 632d0e609a1c1cd43ae9b28ff34a8c68, type: 3}
   materials:
   - {fileID: 2100000, guid: c139f973e215d07479f5342c32bd627d, type: 2}

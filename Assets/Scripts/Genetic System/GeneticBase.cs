@@ -40,7 +40,7 @@ public abstract class GeneticBase : ScriptableObject
     /// Its design is to automatically set any genetic specific information
     /// </summary>
     /// <param name="anim"></param>
-    public abstract void SetGenetic(Pecora pecora);
+    public abstract void SetGenetic(GameObject sheepGO);
 
 
 }

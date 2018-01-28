@@ -6,22 +6,31 @@ using Spine.Unity;
 public class TestColorChange : MonoBehaviour
 {
 
-    
+    [SerializeField]
+    WoolGenetics woolGenetic;
 
     [SerializeField]
-    SkeletonAnimation anim;
+    SkinGenetics skinGenetic;
+
+    [SerializeField]
+    HornGenetics hornGenetic;
+
+    [SerializeField]
+    PersonalityGenetics personalityGenetic;
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
 
-        anim = GetComponent<SkeletonAnimation>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-
+        woolGenetic.SetGenetic(gameObject);
+        skinGenetic.SetGenetic(gameObject);
+        hornGenetic.SetGenetic(gameObject);
+        personalityGenetic.SetGenetic(gameObject);
     }
 }

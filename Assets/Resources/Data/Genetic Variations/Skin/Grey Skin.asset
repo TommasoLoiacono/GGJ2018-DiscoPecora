@@ -13,12 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   geneName: Stone Skin
   geneStr: 0
-  headcolor:
-    serializedVersion: 2
-    rgba: 4288914339
-  armcolor:
-    serializedVersion: 2
-    rgba: 4288914339
-  legColor:
-    serializedVersion: 2
-    rgba: 4288914339
+  headcolor: {r: 0.5661765, g: 0.5661765, b: 0.5661765, a: 1}
+  armcolor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
+  legColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}

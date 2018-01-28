@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spine.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,11 +16,59 @@ public class PersonalityGenetics : GeneticBase
     [TextArea]
     string description;
 
-
-
-    public override void SetGenetic(Pecora pecora)
+    public string Description
     {
-        throw new NotImplementedException();
+        get
+        {
+            return description;
+        }
+    }
+
+    public PersonalityTypes Personality
+    {
+        get
+        {
+            return personality;
+        }
+    }
+
+    public override void SetGenetic(GameObject sheepGO)
+    {
+
+        SkeletonAnimation anim = sheepGO.GetComponent<SkeletonAnimation>();
+
+        MakeNaked(anim);
+
+
+        switch(personality)
+        {
+            case PersonalityTypes.alternativo:
+                break;
+            case PersonalityTypes.aggressivo:
+                break;
+            case PersonalityTypes.yokel:
+                break;
+            case PersonalityTypes.chic:
+                break;
+            case PersonalityTypes.punkabbestia:
+                break;
+        }
+    }
+
+    private void MakeNaked(SkeletonAnimation anim)
+    {
+        anim.skeleton.SetAttachment("occhiali-hippie", null);
+        anim.skeleton.SetAttachment("head-accessories", null);
+        anim.skeleton.SetAttachment("earrings2", null);
+        anim.skeleton.SetAttachment("earrings", null);
+        anim.skeleton.SetAttachment("headphones", null);
+        anim.skeleton.SetAttachment("mouth-piercing", null);
+        anim.skeleton.SetAttachment("collare-punk", null);
+        anim.skeleton.SetAttachment("collana-hippie", null);
+        anim.skeleton.SetAttachment("belt-tamarro-pelo", null);
+        anim.skeleton.SetAttachment("belt-tamarro", null);
+        anim.skeleton.SetAttachment("shoes2", null);
+        anim.skeleton.SetAttachment("shoes", null);
     }
 }
 

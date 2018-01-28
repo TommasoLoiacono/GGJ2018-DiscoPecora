@@ -13,20 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   geneName: Red
   geneStr: 0
-  headcolor:
-    serializedVersion: 2
-    rgba: 5329407
-  bodycolor:
-    serializedVersion: 2
-    rgba: 5329407
+  headcolor: {r: 1, g: 0.20588237, b: 0.20588237, a: 1}
+  bodycolor: {r: 1, g: 0.20784314, b: 0.20784314, a: 1}
   armActive: 1
-  armcolor:
-    serializedVersion: 2
-    rgba: 5329407
+  armcolor: {r: 1, g: 0.20784314, b: 0.20784314, a: 1}
   legActive: 1
-  legColor:
-    serializedVersion: 2
-    rgba: 5329407
-  tailColor:
-    serializedVersion: 2
-    rgba: 5329407
+  legColor: {r: 1, g: 0.20784314, b: 0.20784314, a: 1}
+  tailColor: {r: 1, g: 0.20784314, b: 0.20784314, a: 1}
