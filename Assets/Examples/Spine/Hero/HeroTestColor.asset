@@ -11,21 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b8d2c93a3888f47bfab0c11f1c74bb, type: 3}
   m_Name: HeroTestColor
   m_EditorClassIdentifier: 
+  geneName: 
   geneStr: 0
-  affectedBodyParts:
-  - slotName: 
-    color:
-      serializedVersion: 2
-      rgba: 4289461658
-  - slotName: 
-    color:
-      serializedVersion: 2
-      rgba: 4288190719
-  - slotName: 
-    color:
-      serializedVersion: 2
-      rgba: 4286348412
-  - slotName: 
-    color:
-      serializedVersion: 2
-      rgba: 4281138944
+  headcolor: {r: 0, g: 0, b: 0, a: 0}
+  bodycolor: {r: 0, g: 0, b: 0, a: 0}
+  armActive: 0
+  armcolor: {r: 0, g: 0, b: 0, a: 0}
+  legActive: 0
+  legColor: {r: 0, g: 0, b: 0, a: 0}
+  tailColor: {r: 0, g: 0, b: 0, a: 0}
