@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     public UIManager UIMng;
     [HideInInspector]
     public DiscoPecoraGame DiscoPecora;
+    [HideInInspector]
+    public AudioManager AudioMng;
 
     #region GameFlow StateMachine
     private FlowState _currentState;
