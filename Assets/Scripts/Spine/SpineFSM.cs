@@ -13,6 +13,8 @@ public class SpineFSM : MonoBehaviour
     [SerializeField]
     SkeletonAnimation anim;
 
+    public string selectedDance = "default-dance";
+
 	// Use this for initialization
 	void Start ()
     {
@@ -28,14 +30,40 @@ public class SpineFSM : MonoBehaviour
 
     private void UpdateState()
     {
-        
+        //Incase we need to do something during a animation state
+        //Currently i have nothing planned
+        switch(currentState)
+        {
+            case SpineAnimStates.Dancing:
+                break;
+            case SpineAnimStates.Loving:
+                break;
+            case SpineAnimStates.Walking:
+                break;
+            case SpineAnimStates.Idle:
+                break;
+        }
     }
 
     public void ChangeAnimationState(SpineAnimStates nextState)
     {
-        currentState = nextState;
-        anim.AnimationState.SetAnimation(0, currentState.ToString(), true);
+        switch (nextState)
+        {
+            case SpineAnimStates.Dancing:
+                anim.AnimationState.SetAnimation(0, selectedDance, true);
+                break;
+            case SpineAnimStates.Loving:
+                anim.AnimationState.SetAnimation(0, "make-love", true);
+                break;
+            case SpineAnimStates.Walking:
+                anim.AnimationState.SetAnimation(0, "walking", true);
+                break;
+            case SpineAnimStates.Idle:
+                anim.AnimationState.SetAnimation(0, "idle", true);
+                break;
+        }
     }
+    
 
 }
 
