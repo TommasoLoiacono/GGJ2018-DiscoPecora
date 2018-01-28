@@ -17,7 +17,17 @@ public class DiscoPecoraGame : MonoBehaviour {
     public Pecora pecoraSuprema = new Pecora();
     public Pecora pecoraSx;
     public Pecora pecoraDx;
-    public int punteggio;
+
+    public int _points;
+    public int Points {
+        get { return _points; }
+        set
+        {
+            _points = value;
+            GameManager.I.UIMng.gameplayCtrl.UpdatePoints(_points);
+        }
+    }
+
     public bool giocoAttivo = true;
     public float secondiPerGenerarePecora = 5f;
     public int numeroMassimoPecore = 50;
@@ -260,8 +270,9 @@ public class DiscoPecoraGame : MonoBehaviour {
                 if (pecoraSuprema.coloreLana.valoreCaratteristica == p.coloreLana.valoreCaratteristica)
                 {
                     // print("Hai vinciuto");
-                    punteggio += 50;
+                    _points += 50;
                     pecoraSuprema = RandomizzaPecora();
+                    GameManager.I.UIMng.gameplayCtrl.SetGoalTabText(pecoraSuprema);
                 }
             }
         }

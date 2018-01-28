@@ -47,6 +47,12 @@ public class GameManager : MonoBehaviour {
             case FlowState.Gameplay:
                 if (_oldState == FlowState.MainMenu)
                     GameplayActions();
+                if (_oldState == FlowState.Pause)
+                    ReactivateGame();
+                break;
+            case FlowState.Pause:
+                if (_oldState == FlowState.Gameplay)
+                    PauseActions();
                 break;
             case FlowState.Gameover:
                 if (_oldState == FlowState.Gameplay)
@@ -81,7 +87,7 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
                 DiscoPecora.Accoppia();
             if (Input.GetKeyDown(KeyCode.Escape))
-                Application.Quit(); 
+                ChangeState(FlowState.Pause); 
         }
     }
 
@@ -125,6 +131,11 @@ public class GameManager : MonoBehaviour {
         UIMng.DeactivateSpotLight1();
     }
 
+    public void ExitPause()
+    {
+        ChangeState(FlowState.Gameplay);
+    }
+
     /// <summary>
     /// The action when the current state is GamePlay
     /// </summary>
@@ -143,6 +154,24 @@ public class GameManager : MonoBehaviour {
     }
 
     /// <summary>
+    /// The actions when the old status was pause and you want to restart the gameplay
+    /// </summary>
+    void ReactivateGame()
+    {
+        UIMng.PauseActions(false);
+        DiscoPecora.giocoAttivo = true;
+    }
+
+    /// <summary>
+    /// The action when the current state is Pause
+    /// </summary>
+    void PauseActions()
+    {
+        UIMng.PauseActions(true);
+        DiscoPecora.giocoAttivo = false;
+    }
+
+    /// <summary>
     /// The action when the current state is Gameover
     /// </summary>
     void GameOverActions()
@@ -156,5 +185,6 @@ public enum FlowState
     Titles,
     MainMenu,
     Gameplay,
+    Pause,
     Gameover
 }

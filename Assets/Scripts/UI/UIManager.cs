@@ -15,13 +15,18 @@ public class UIManager : MonoBehaviour {
     public SpotLightController SpotLight2;
     public GameObject firstSheepOff;
     public GameObject secondSheepOff;
-
+    public GameObject PausePanel;
 
     public void Init()
     {
         gameplayCtrl = GetComponentInChildren<GameplayPanelController>();
         mainMenuCtrl= GetComponentInChildren<MainMenuController>();
         gameplayCtrl.Init(this);
+    }
+
+    public void ExitPause()
+    {
+        GameManager.I.ExitPause();
     }
 
     public void ActivateSpotLight1()
@@ -48,16 +53,33 @@ public class UIManager : MonoBehaviour {
     {
         gameplayCtrl.gameObject.SetActive(false);
         mainMenuCtrl.gameObject.SetActive(true);
+        SetPausaPanelStatus(false);
     }
 
     public void GameplayActions()
     {
         gameplayCtrl.gameObject.SetActive(true);
         mainMenuCtrl.gameObject.SetActive(false);
+        SetPausaPanelStatus(false);
+
+    }
+
+    public void PauseActions(bool _isActive)
+    {
+        SetPausaPanelStatus(_isActive);
+        if (_isActive)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
     }
     
     public void GameOverActions()
     {
 
+    }
+
+    void SetPausaPanelStatus(bool _isActive)
+    {
+        PausePanel.SetActive(_isActive);
     }
 }

@@ -12,7 +12,7 @@ public class GameplayPanelController : MonoBehaviour {
     //public Sprite LeftDisplayerClose;
     //public Sprite RightDisplayerClose;
     public SheepDisplayer GoalTab;
-    public Text CounterText;
+    public Text PointsCounter;
 
     public Sprite MaleGoalSprite;
     public Sprite FemaleGoalSprite;
@@ -22,6 +22,11 @@ public class GameplayPanelController : MonoBehaviour {
         _sheepDisplayers = GetComponentsInChildren<SheepDisplayer>();
         //_sheepDisplayers[0].Init(LeftDisplayerOpen, LeftDisplayerClose);
         //_sheepDisplayers[1].Init(RightDisplayerOpen, RightDisplayerClose);
+    }
+
+    public void UpdatePoints(int _points)
+    {
+        PointsCounter.text = "Points: " + _points;
     }
 
     public void SetGoalTabText(Pecora _pecora)

@@ -270,6 +270,16 @@ Prefab:
       propertyPath: DizionarioFenotipo.coloreLana.Array.data[2].chiave
       value: giallo
       objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: maxNumberOfSheeps
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119542241536972, guid: ef5730aab1395d643bfaac0f9300416c,
+        type: 2}
+      propertyPath: minNumberOfSheeps
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef5730aab1395d643bfaac0f9300416c, type: 2}
   m_IsPrefabParent: 0

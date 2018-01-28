@@ -319,7 +319,7 @@ MonoBehaviour:
   pecoraSuprema: {fileID: 0}
   pecoraSx: {fileID: 0}
   pecoraDx: {fileID: 0}
-  punteggio: 0
+  _points: 0
   giocoAttivo: 1
   secondiPerGenerarePecora: 5
   numeroMassimoPecore: 50
