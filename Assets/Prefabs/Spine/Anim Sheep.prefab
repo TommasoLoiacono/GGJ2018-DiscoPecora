@@ -60,7 +60,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c139f973e215d07479f5342c32bd627d, type: 2}
+  - {fileID: 2100000, guid: ba566bccd4089004fb029cb60ed00807, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: ef7cd934bc36f8147b4b7be348031e27, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 194fcca8523473442956b84259054a42, type: 2}
   initialSkinName: Sheep
   initialFlipX: 0
   initialFlipY: 0
