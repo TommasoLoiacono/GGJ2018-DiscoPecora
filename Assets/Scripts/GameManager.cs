@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
                 DiscoPecora.Accoppia();
             if (Input.GetKeyDown(KeyCode.Escape))
-                Application.Quit(); 
+                ChangeState(FlowState.Pause); 
         }
     }
 
@@ -129,6 +129,11 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(timeToShutOffHightlight);
         UIMng.firstSheepOff.SetActive(true);
         UIMng.DeactivateSpotLight1();
+    }
+
+    public void ExitPause()
+    {
+        ChangeState(FlowState.Gameplay);
     }
 
     /// <summary>

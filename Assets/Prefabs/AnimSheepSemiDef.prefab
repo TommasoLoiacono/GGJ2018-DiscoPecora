@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114126527499972094}
   - component: {fileID: 95679111401585828}
   m_Layer: 0
-  m_Name: Anim Sheep
+  m_Name: AnimSheepSemiDef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
