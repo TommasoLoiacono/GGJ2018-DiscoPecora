@@ -13,80 +13,36 @@ public class SpineFSM : MonoBehaviour
     [SerializeField]
     SkeletonAnimation anim;
 
-    public string selectedDance = "default-dance";
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         sheep = gameObject;
         anim.GetComponent<SkeletonAnimation>();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         UpdateState();
-	}
+    }
 
     private void UpdateState()
     {
-        
-    }
-
-    public void ChangeAnimationState(SpineAnimStates nextState)
-    {
-        switch (nextState)
-        {
-            case SpineAnimStates.Dancing:
-                anim.AnimationState.SetAnimation(0, selectedDance, true);
-                break;
-            case SpineAnimStates.Loving:
-                anim.AnimationState.SetAnimation(0, "make-love", true);
-                break;
-            case SpineAnimStates.Walking:
-                anim.AnimationState.SetAnimation(0, "walking", true);
-                break;
-            case SpineAnimStates.Idle:
-                anim.AnimationState.SetAnimation(0, "idle", true);
-                break;
-        }
-    }
-    
-
-}
-
-public enum SpineAnimStates
-{
-    WalkingAlternative,
-    WalkingAggressive,
-    WalkingPunk,
-    WalkingChic,
-    WalkingYokel,
-
-    IdleAlternative,
-    IdleAggressive,
-    IdlePunk,
-    IdleChic,
-    IdleYokel,
-    
-    Drag
-
-}
-
         if (gameObject.GetComponent<Sheep>().dragging)
         {
             currentState = SpineAnimStates.Drag;
         }
         else
         {
-                if (gameObject.GetComponent<Sheep>().CR_running)
-                {
-                   // currentState = SpineAnimStates.Walking;
+            if (gameObject.GetComponent<Sheep>().CR_running)
+            {
+                // currentState = SpineAnimStates.Walking;
 
-                switch (gameObject.GetComponent<Pecora>().carattere.valoreCaratteristica) { 
+                switch (gameObject.GetComponent<Pecora>().carattere.valoreCaratteristica)
+                {
                     case "Alternative":
                         currentState = SpineAnimStates.WalkingAlternative;
-                    break;
+                        break;
                     case "Aggressive":
                         currentState = SpineAnimStates.WalkingAggressive;
 
@@ -104,13 +60,13 @@ public enum SpineAnimStates
 
                         break;
                     default:
-                    break;
+                        break;
                 }
 
 
             }
-                else
-                {
+            else
+            {
                 //idle
                 switch (gameObject.GetComponent<Pecora>().carattere.valoreCaratteristica)
                 {
@@ -139,5 +95,32 @@ public enum SpineAnimStates
                 }
             }
 
-            
-        }
+
+        }
+    }
+
+    public void ChangeAnimationState(SpineAnimStates nextState)
+    {
+        currentState = nextState;
+        anim.AnimationState.SetAnimation(0, currentState.ToString(), true);
+    }
+
+}
+
+public enum SpineAnimStates
+{
+    WalkingAlternative,
+    WalkingAggressive,
+    WalkingPunk,
+    WalkingChic,
+    WalkingYokel,
+
+    IdleAlternative,
+    IdleAggressive,
+    IdlePunk,
+    IdleChic,
+    IdleYokel,
+
+    Drag
+
+}

@@ -54,7 +54,7 @@ public class PersonalityGenetics : GeneticBase
                 anim.skeleton.SetAttachment("head-accessories", "flower");
                 anim.skeleton.SetAttachment("collana-hippie", "collana-hippie");
 
-                fsm.selectedDance = "disco";
+          //      fsm.selectedDance = "disco";
 
                 break;
             case PersonalityTypes.Aggressive:
@@ -65,7 +65,7 @@ public class PersonalityGenetics : GeneticBase
                 anim.skeleton.SetAttachment("shoes2", "stivale-1");
                 anim.skeleton.SetAttachment("shoes", "stivale-1");
 
-                fsm.selectedDance = "rock";
+            //    fsm.selectedDance = "rock";
 
                 break;
             case PersonalityTypes.Yokel:
@@ -74,7 +74,7 @@ public class PersonalityGenetics : GeneticBase
                 anim.skeleton.SetAttachment("shoes2", "elegant-shoes");
                 anim.skeleton.SetAttachment("shoes", "elegant-shoes");
 
-                fsm.selectedDance = "rave";
+           //     fsm.selectedDance = "rave";
 
                 break;
             case PersonalityTypes.Chic:
@@ -83,7 +83,7 @@ public class PersonalityGenetics : GeneticBase
                 anim.skeleton.SetAttachment("shoes2", "heels");
                 anim.skeleton.SetAttachment("shoes", "heels");
 
-                fsm.selectedDance = "napolian dynomite";
+            //    fsm.selectedDance = "napolian dynomite";
 
                 break;
             case PersonalityTypes.Punk:
@@ -95,7 +95,7 @@ public class PersonalityGenetics : GeneticBase
                 anim.skeleton.SetAttachment("shoes2", "sneakers");
                 anim.skeleton.SetAttachment("shoes", "sneakers");
 
-                fsm.selectedDance = "headbang";
+           //     fsm.selectedDance = "headbang";
 
                 break;
         }

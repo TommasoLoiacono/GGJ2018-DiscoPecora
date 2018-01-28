@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
-  m_Name: discopecora_Atlas
+  m_Name: clouds_Atlas
   m_EditorClassIdentifier: 
-  atlasFile: {fileID: 4900000, guid: 38bf54c75017e34499ae912188497a29, type: 3}
+  atlasFile: {fileID: 4900000, guid: cd5656edde6a93d44a35998b7fd35162, type: 3}
   materials:
-  - {fileID: 2100000, guid: acf11dfdfb639f04fa88eb913f9ddd08, type: 2}
+  - {fileID: 2100000, guid: d30caf143fb1e0e45a8bf6b2c0d723a8, type: 2}
